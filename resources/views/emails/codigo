@@ -1,0 +1,127 @@
+<section class="max-w-3xl mx-auto  border border-gray-200">
+        <div>
+            <div class="p-5">
+                <div class="flex justify-center mb-5">
+                <img src="http://127.0.0.1:8000/imagenes/logos/logo-pez.jpg">
+                </div>
+                <p class="text-2xl text-center text-gray-700">Detalles de tu pedido</p>
+            </div>
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
+            <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+                <tr>
+                   
+                    <th scope="col" class="py-3 px-6 ">
+                        Imagen
+                    </th>
+                    <th scope="col" class="py-3 px-6 ">
+                        Descripcion del producto
+                    </th>
+                    
+                    <th scope="col" class="py-3 px-6 ">
+                        Cantidad
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Precio
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                                
+          
+                <tr class="border-t border-gray-200 dark:border-gray-700">
+                    
+                    <th class="py-4 px-6 text-sky-600 ">
+                        <img src="http://127.0.0.1:8000/imagenes/productos/max-e-260-title.jpg" style="width:50px; height:50px;">
+                    </th>
+                    <th class="py-4 px-6 text-sm text-gray-800 dark:bg-white">
+                        Max E-260 LED Complete Reef System (69 Gal) - Red Sea / Black
+                    </th>
+                    <td class="py-4 px-6 text-md text-center dark:bg-white">
+                        1
+                    </td>
+                    <td class="py-4 px-6 text-md dark:bg-white">
+                        $2682.80
+                    </td>
+                   
+                </tr>
+                                
+          
+                <tr class="border-t border-gray-200 dark:border-gray-700">
+                    
+                    <th class="py-4 px-6 text-sky-600 ">
+                        <img src="http://127.0.0.1:8000/imagenes/productos/max-e-260-title.jpg" style="width:50px; height:50px;">
+                    </th>
+                    <th class="py-4 px-6 text-sm text-gray-800 dark:bg-white">
+                        Max E-260 LED Complete Reef System (69 Gal) - Red Sea / White
+                    </th>
+                    <td class="py-4 px-6 text-md text-center dark:bg-white">
+                        1
+                    </td>
+                    <td class="py-4 px-6 text-md dark:bg-white">
+                        $2682.80
+                    </td>
+                   
+                </tr>
+                                
+          
+                <tr class="border-t border-gray-200 dark:border-gray-700">
+                    
+                    <th class="py-4 px-6 text-sky-600 ">
+                        <img src="http://127.0.0.1:8000/imagenes/productos/1660626450.jpg" style="width:50px; height:50px;">
+                    </th>
+                    <th class="py-4 px-6 text-sm text-gray-800 dark:bg-white">
+                        Max E-170 LED Complete Reef System (45 Gal) - Red Sea / Black
+                    </th>
+                    <td class="py-4 px-6 text-md text-center dark:bg-white">
+                        1
+                    </td>
+                    <td class="py-4 px-6 text-md dark:bg-white">
+                        $1386.75
+                    </td>
+                   
+                </tr>
+                                
+          
+                <tr class="border-t border-gray-200 dark:border-gray-700">
+                    
+                    <th class="py-4 px-6 text-sky-600 ">
+                        <img src="http://127.0.0.1:8000/imagenes/productos/1660626450.jpg" style="width:50px; height:50px;">
+                    </th>
+                    <th class="py-4 px-6 text-sm text-gray-800 dark:bg-white">
+                        Max E-170 LED Complete Reef System (45 Gal) - Red Sea / Blue
+                    </th>
+                    <td class="py-4 px-6 text-md text-center dark:bg-white">
+                        1
+                    </td>
+                    <td class="py-4 px-6 text-md dark:bg-white">
+                        $1386.75
+                    </td>
+                   
+                </tr>
+                                
+          
+                <tr class="border-t border-gray-200 dark:border-gray-700">
+                    
+                    <th class="py-4 px-6 text-sky-600 ">
+                        <img src="http://127.0.0.1:8000/imagenes/productos/RF-25-Rimless-Flat-Panel-Aquarium-Stand.jpg" style="width:50px; height:50px;">
+                    </th>
+                    <th class="py-4 px-6 text-sm text-gray-800 dark:bg-white">
+                        RF-25-Rimless-Flat-Panel Aquarium&amp;Stand(25 Gal)-JBJ / Black
+                    </th>
+                    <td class="py-4 px-6 text-md text-center dark:bg-white">
+                        1
+                    </td>
+                    <td class="py-4 px-6 text-md dark:bg-white">
+                        $832.50
+                    </td>
+                   
+                </tr>
+                               
+            </tbody>
+        </table>
+        <div class="p-5 bg-gray-200 rounded-b-lg">
+            <p class="text-end"><span class="font-bold">Total:</span> $8971.60</p>
+            </div>
+        </div>
+      </section>
