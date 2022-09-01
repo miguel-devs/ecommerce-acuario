@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="/imagenes/logos/icono-pez-50-50.png">
 
-        <title inertia>{{ config('app.name', 'Acuatica') }}</title>
+        <title inertia>Aquatic Depot</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 

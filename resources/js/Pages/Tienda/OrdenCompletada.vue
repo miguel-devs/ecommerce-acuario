@@ -8,33 +8,9 @@
 
     <section class="w-full min-h-screen bg-sky-600 pt-20 pl-10 pr-10 pb-10">
       <div class="">
-        <div class="bg-white flex justify-between p-5 mb-4 rounded-md shadow-md">
-          <div>
-            <div class="flex justify-center">
-              <div class="h-10 w-10 p-2 text-center rounded-full bg-sky-600 shadow-md text-white font-bold">
-                <i class="fa-solid fa-check"></i>
-              </div>
-            </div>
-            <p class="text-sky-600 font-bold">Mi carrito</p>
-          </div>
+       
+       <PasosCompra stepOne ="true" stepTwo="true" stepThree="true" />
 
-          <div>
-            <div class="flex justify-center">
-              <div class="h-10 w-10 p-2 text-center rounded-full bg-sky-600 shadow-md text-white font-bold">
-                <i class="fa-solid fa-check"></i>
-              </div>
-            </div>
-            <p class="text-sky-600 font-bold">Datos envio</p>
-          </div>
-          <div>
-            <div class="flex justify-center">
-              <div class="h-10 w-10 p-2 text-center rounded-full bg-sky-600 shadow-md text-white font-bold">
-                <i class="fa-solid fa-check"></i>
-              </div>
-            </div>
-            <p class="text-sky-600 font-bold">Confirmación de orden</p>
-          </div>
-        </div>
         <div class="flex justify-center">
           <div v-if="order" class="bg-white w-[30rem] p-2 rounded-md shadow-md">
             <div class="flex justify-center  ">
@@ -93,45 +69,8 @@
         </div>
       </div>
     </section>
-    <section id="contacto" class="relative bg-cover bg-center bg-no-repeat" style="background-image:url(/imagenes/web/contacto.jpg)">
-        <div class="bg-black/50 w-full h-full">
-         <TitleSeparator class="w-full absolute -top-[1.7rem]">
-                  Contacto
-        </TitleSeparator> 
-        <div class="flex pl-10 pr-10 pt-24 pb-24">
-        <div>
-                   <img src="/imagenes/logos/logo150-150.png" style="width:150px; height:150px">
-       </div>
-<div class="w-full flex justify-between p-5">
-        <div class="w-1/2">
-          <p class="text-white mb-2">Teléfono: 22222222</p>
-          <p class="text-white mb-2">contacto@correo.com</p>
-          <p class="text-white">Horarios: 10:00am - 8:00pm L-S</p>
-        </div>
-        <div class="w-1/2 flex justify-center items-center">
-          <a href="#"
-            ><div
-              class="w-10 h-10 mr-5 rounded-lg bg-cover bg-no-repeat bg-center"
-              style="background-image: url(imagenes/web/instagram.jpg)"
-            ></div
-          ></a>
-          <a href="#"
-            ><div
-              class="w-10 h-10 mr-5 rounded-lg bg-cover bg-no-repeat bg-center"
-              style="background-image: url(imagenes/web/whattsap.png)"
-            ></div
-          ></a>
-          <a href="#"
-            ><div
-              class="w-10 h-10 mr-5 rounded-lg bg-cover bg-no-repeat bg-center"
-              style="background-image: url(imagenes/web/facebook.jpg)"
-            ></div
-          ></a>
-        </div>
-      </div>
-        </div>
-       </div>
-      </section>
+    <Contacto/>
+    
   </div>
 </template>
 
@@ -143,6 +82,8 @@ import NavBarTienda from "@/Layouts/NavBarTienda.vue";
 import NavLeft from "@/Layouts/NavLeftDev.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
+import Contacto from "@/Layouts/Contacto.vue";
+import PasosCompra from "@/Layouts/PasosCompra.vue";
 
 export default {
   props: {
@@ -157,7 +98,9 @@ export default {
     NavLeft,
     Link,
     ActionMessage,
-    TitleSeparator
+    TitleSeparator,
+    Contacto,
+    PasosCompra
   },
   data() {
     return {

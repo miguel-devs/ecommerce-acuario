@@ -11583,6 +11583,9 @@ select {
 .ml-5 {
   margin-left: 1.25rem;
 }
+.mr-1 {
+  margin-right: 0.25rem;
+}
 .block {
   display: block;
 }
@@ -11685,6 +11688,15 @@ select {
 .h-7 {
   height: 1.75rem;
 }
+.h-\[40rem\] {
+  height: 40rem;
+}
+.h-\[30rem\] {
+  height: 30rem;
+}
+.h-\[28rem\] {
+  height: 28rem;
+}
 .max-h-96 {
   max-height: 24rem;
 }
@@ -11753,12 +11765,6 @@ select {
 }
 .w-64 {
   width: 16rem;
-}
-.w-3\/5 {
-  width: 60%;
-}
-.w-4\/5 {
-  width: 80%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -12151,14 +12157,6 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
-.border-gray-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
-}
-.border-gray-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
 .border-sky-700 {
   --tw-border-opacity: 1;
   border-color: rgb(3 105 161 / var(--tw-border-opacity));
@@ -12275,6 +12273,10 @@ select {
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+.bg-orange-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 65 12 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -12470,6 +12472,12 @@ select {
 .pr-3 {
   padding-right: 0.75rem;
 }
+.pl-5 {
+  padding-left: 1.25rem;
+}
+.pr-5 {
+  padding-right: 1.25rem;
+}
 .pt-0 {
   padding-top: 0px;
 }
@@ -12478,12 +12486,6 @@ select {
 }
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-.pl-5 {
-  padding-left: 1.25rem;
-}
-.pr-5 {
-  padding-right: 1.25rem;
 }
 .text-left {
   text-align: left;
@@ -12684,6 +12686,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
 }
+.text-sky-800 {
+  --tw-text-opacity: 1;
+  color: rgb(7 89 133 / var(--tw-text-opacity));
+}
 .text-slate-400 {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
@@ -12703,10 +12709,6 @@ select {
 .text-orange-300 {
   --tw-text-opacity: 1;
   color: rgb(253 186 116 / var(--tw-text-opacity));
-}
-.text-sky-800 {
-  --tw-text-opacity: 1;
-  color: rgb(7 89 133 / var(--tw-text-opacity));
 }
 .text-red-300 {
   --tw-text-opacity: 1;
@@ -13661,6 +13663,10 @@ html,body{
     height: 100%;
   }
 
+  .lg\:h-40 {
+    height: 10rem;
+  }
+
   .lg\:w-2\/4 {
     width: 50%;
   }
@@ -13677,8 +13683,16 @@ html,body{
     width: 40%;
   }
 
+  .lg\:w-40 {
+    width: 10rem;
+  }
+
   .lg\:max-w-7xl {
     max-width: 80rem;
+  }
+
+  .lg\:grid-flow-col {
+    grid-auto-flow: column;
   }
 
   .lg\:grid-cols-3 {

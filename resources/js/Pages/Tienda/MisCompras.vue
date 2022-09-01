@@ -2,28 +2,9 @@
   <!-- This example requires Tailwind CSS v2.0+ -->
   <Head title="Mis compras" />
     <NavBarTienda :totalCarritoProps="totalCarrito"/>
-
-    <div v-show="$page.props.flash.message"
-        class="fixed bottom-0 p-1 right-4 z-50  mb-4 text-sm bg-white text-slate-700 border border-gray-300 shadow-md rounded-lg "
-                    role="alert"
-                >
-                <div class="relative h-5">
-                  <div class="absolute top-0 right-0">
-                     <svg @click="$page.props.flash.message = null" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                     </svg>
-                  </div>
-                </div>
-                <div class="font-medium p-2">
-                        {{ $page.props.flash.message }}
-                          
-                        <Link :href="route('tienda')" class="text-sky-500 ">Ir a la tienda</Link>
-                </div>
-     </div>
-
-      <NavLeft />
-       <div id="section-categorias" class="w-full h-screen bg-sky-700 pt-20 pl-10 pr-10 pb-10" >
-       <section class="w-full h-full flex justify-center">
+       <NavLeft />
+       <div id="section-categorias" class="w-full min-h-screen bg-sky-700 pt-20 " >
+         <section class="w-full h-full flex justify-center pl-10 pr-10 pb-10">
         <div class="w-full min-h-full rounded-md shadow-md p-4  bg-white flex justify-center items-center">
             <div v-if="ordenes.data.length > 0 " class="h-full relative">
             <div class="w-full border-b border-gray-300 pb-3 mb-2">
@@ -90,7 +71,8 @@
                 </div>
             </div>
         </div>
-      </section>
+         </section>
+         <Contacto/>
        </div>
 </template>
 
@@ -102,6 +84,7 @@ import NavLeft from "@/Layouts/NavLeftDev.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
 import Pagination from "@/Layouts/Pagination.vue";
+import Contacto from "@/Layouts/Contacto.vue";
 
 export default {
   components: {
@@ -111,6 +94,7 @@ export default {
     Link,
     TitleSeparator,
     Pagination,
+    Contacto
   },
   props: {
      ordenes:Object,

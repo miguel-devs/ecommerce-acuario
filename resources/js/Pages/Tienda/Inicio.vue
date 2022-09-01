@@ -28,7 +28,7 @@
           
         
           <div>
-               <p class="text-6xl font-extrabold  text-center mb-10 text-white">En AQUATICA tenemos los productos, accesorios y más para tu acuario.</p>
+               <p class="text-6xl font-extrabold  text-center mb-10 text-white">En Aquatic Depot tenemos los productos, accesorios y más para tu acuario.</p>
                <div class="w-full flex justify-center">
                       <Link :href="route('tienda')" class="rounded-lg pl-4 pt-2 pr-4 pb-2 text-white bg-transparent border border-white font-bold">Tienda</Link>
                </div>
@@ -158,45 +158,7 @@
           </div>
         </div>
       </section>
-      <section id="contacto" class="relative bg-cover bg-center bg-no-repeat" style="background-image:url(/imagenes/web/contacto.jpg)">
-        <div class="bg-black/50 w-full h-full">
-         <TitleSeparator class="w-full absolute -top-[1.7rem]">
-                  Contacto
-        </TitleSeparator> 
-        <div class="flex pl-10 pr-10 pt-24 pb-24">
-        <div>
-                   <img src="/imagenes/logos/logo150-150.png" style="width:150px; height:150px">
-       </div>
-<div class="w-full flex justify-between p-5">
-        <div class="w-1/2">
-          <p class="text-white mb-2">Teléfono: 22222222</p>
-          <p class="text-white mb-2">contacto@correo.com</p>
-          <p class="text-white">Horarios: 10:00am - 8:00pm L-S</p>
-        </div>
-        <div class="w-1/2 flex justify-center items-center">
-          <a href="#"
-            ><div
-              class="w-10 h-10 mr-5 rounded-lg bg-cover bg-no-repeat bg-center"
-              style="background-image: url(imagenes/web/instagram.jpg)"
-            ></div
-          ></a>
-          <a href="#"
-            ><div
-              class="w-10 h-10 mr-5 rounded-lg bg-cover bg-no-repeat bg-center"
-              style="background-image: url(imagenes/web/whattsap.png)"
-            ></div
-          ></a>
-          <a href="#"
-            ><div
-              class="w-10 h-10 mr-5 rounded-lg bg-cover bg-no-repeat bg-center"
-              style="background-image: url(imagenes/web/facebook.jpg)"
-            ></div
-          ></a>
-        </div>
-      </div>
-        </div>
-       </div>
-      </section>
+      <Contacto></Contacto>
 
 
   </div>
@@ -208,6 +170,7 @@ import NavBarTienda from "@/Layouts/NavBarTienda.vue";
 import NavLeft from "@/Layouts/NavLeftDev.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
+import Contacto from "@/Layouts/Contacto.vue";
 
 export default {
   components: {
@@ -216,6 +179,7 @@ export default {
     NavLeft,
     Link,
     TitleSeparator,
+    Contacto
   },
   props: {
     productosCarrito:Object,

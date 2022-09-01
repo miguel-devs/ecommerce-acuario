@@ -55,7 +55,7 @@ onMounted(()=> {
         </template>
 
         <template #description>
-            Actualiza tu informacion de perfil y correo electronico
+            Actualiza tu información de perfil y correo electrónico
         </template>
 
         <template #form>
@@ -76,7 +76,7 @@ onMounted(()=> {
 
             <!-- Email -->
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="email" value="Email" />
+                <JetLabel for="email" value="Correo" />
                 <JetInput
                     id="email"
                     v-model="form.email"

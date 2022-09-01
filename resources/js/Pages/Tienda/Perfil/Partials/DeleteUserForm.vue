@@ -49,7 +49,7 @@ const closeModal = () => {
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                Si eliminas tu cuenta toda tu informacion tambien sera eliminata permanentemente
+                  Si eliminas tu cuenta toda tu información también será eliminada permanentemente
             </div>
 
             <div class="mt-5">

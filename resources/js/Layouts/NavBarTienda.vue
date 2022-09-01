@@ -189,7 +189,7 @@ export default {
                                         <JetDropdownLink :href="route('mis.compras')">
                                             Mis compras
                                         </JetDropdownLink>
-                                        <JetDropdownLink v-if="$page.props.user.role_id == 1" :href="route('dashboard')" >
+                                        <JetDropdownLink v-if="$page.props.user.role_id == 1" :href="route('dashboard.productos')" >
                                             Dashboard
                                         </JetDropdownLink>
                                       
@@ -248,7 +248,7 @@ export default {
                                 Perfil
                             </Link>
 
-                             <Link v-if="$page.props.user.role_id == 1" :href="route('dashboard')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"  :active="route().current('profile.show')">
+                             <Link v-if="$page.props.user.role_id == 1" :href="route('dashboard.productos')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"  :active="route().current('profile.show')">
                                 Dashboard
                             </Link>
 

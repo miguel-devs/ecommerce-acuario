@@ -13,8 +13,8 @@
                   <div class="flex items-center">
                     <Link
                       :href="route('inicio')"
-                      class="text-sm font-medium text-orange-300"
-                      >AQUATICA
+                      class="text-sm font-medium text-sky-700"
+                      >Aquatic Depot
                     </Link>
                     
                   </div>
@@ -77,6 +77,8 @@
          <Pagination :links="productos"/>
         </div>
       </section>
+      <Contacto/>
+
   </div>
 </template>
 
@@ -86,6 +88,7 @@ import NavBarTienda from "@/Layouts/NavBarTienda.vue";
 import NavLeft from "@/Layouts/NavLeftDev.vue";
 import Pagination from "@/Layouts/Pagination.vue";
 import { Link } from '@inertiajs/inertia-vue3';
+import Contacto from "@/Layouts/Contacto.vue";
 
 export default {
   props: {
@@ -98,6 +101,7 @@ export default {
     NavBarTienda,
     NavLeft,
     Pagination,
+    Contacto
   },
      data() {
        return {

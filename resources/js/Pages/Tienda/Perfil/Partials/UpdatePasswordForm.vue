@@ -44,7 +44,7 @@ const updatePassword = () => {
         </template>
 
         <template #description>
-            Asegurate que tu cuenta esta usando una contraseña larga y diferte para mayor seguridad.
+            Asegúrate que tu cuenta está usando una contraseña larga y diferente para mayor seguridad.
         </template>
 
         <template #form>

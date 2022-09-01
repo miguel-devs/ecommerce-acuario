@@ -28,7 +28,7 @@ const submit = () => {
         <JetAuthenticationCardLogo/>
 
         <div class="mb-4 text-sm text-gray-600">
-            Olvidaste tu contraseña? Ingresa tu correo electronico, para restablecer tu contraseña.
+            ¿Olvidaste tu contraseña? Ingresa tu correo electrónico, para restablecer tu contraseña.
         </div>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
@@ -39,7 +39,7 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <JetLabel for="email" value="Email" />
+                <JetLabel for="email" value="Correo" />
                 <JetInput
                     id="email"
                     v-model="form.email"

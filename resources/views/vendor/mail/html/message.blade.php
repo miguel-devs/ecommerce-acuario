@@ -2,7 +2,7 @@
 {{-- Header --}}
 @slot('header')
 @component('mail::header', ['url' => config('app.url')])
-{{ config('app.name') }}
+Aquatic Depot
 @endcomponent
 @endslot
 
@@ -21,7 +21,7 @@
 {{-- Footer --}}
 @slot('footer')
 @component('mail::footer')
-© {{ date('Y') }} {{ config('app.name') }}. @lang('Todos los derechos reservados.')
+© {{ date('Y') }}  Aquatic Depot. @lang('Todos los derechos reservados.')
 @endcomponent
 @endslot
 @endcomponent

@@ -44,7 +44,7 @@ const logout = () => {
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link :href="route('inicio')">
                                      <img class="block lg:hidden h-8 w-auto" src="/imagenes/logos/logo-pez.jpg" alt="Workflow">
                                      <img class="hidden lg:block h-8 w-auto" src="/imagenes/logos/logo-pez.jpg" alt="Workflow" >
                                 </Link>
@@ -52,9 +52,6 @@ const logout = () => {
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Inicio
-                                </JetNavLink>
                                 <JetNavLink :href="route('dashboard.productos')" :active="route().current('dashboard.productos')">
                                     Productos
                                 </JetNavLink>
@@ -159,13 +156,10 @@ const logout = () => {
                                     </template>
 
                                     <template #content>
-                                        <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
-                                        </div>
+                                       
 
-                                        <JetDropdownLink :href="route('profile.show')">
-                                            Profile
+                                        <JetDropdownLink :href="route('dashboard.user.profile')">
+                                            Perfil
                                         </JetDropdownLink>
 
                                         <JetDropdownLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')">
@@ -177,7 +171,7 @@ const logout = () => {
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <JetDropdownLink as="button">
-                                                Log Out
+                                                Cerrar Sesión
                                             </JetDropdownLink>
                                         </form>
                                     </template>
@@ -217,7 +211,7 @@ const logout = () => {
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <JetResponsiveNavLink :href="route('dashboard.productos')" :active="route().current('dashboard')">
                             Dashboard
                         </JetResponsiveNavLink>
                     </div>
@@ -240,8 +234,8 @@ const logout = () => {
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <JetResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
-                                Profile
+                            <JetResponsiveNavLink :href="route('dashboard.user.profile')" :active="route().current('profile.show')">
+                                Perfil
                             </JetResponsiveNavLink>
 
                             <JetResponsiveNavLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')" :active="route().current('api-tokens.index')">
@@ -251,7 +245,7 @@ const logout = () => {
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <JetResponsiveNavLink as="button">
-                                    Log Out
+                                                Cerrar Sesión
                                 </JetResponsiveNavLink>
                             </form>
 

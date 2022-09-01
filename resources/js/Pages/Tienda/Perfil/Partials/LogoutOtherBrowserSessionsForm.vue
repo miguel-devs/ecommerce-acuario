@@ -54,7 +54,7 @@ const closeModal = () => {
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                Si es necesario, puedes cerrar todas las sesiones de otros navegadores o dispositivos. Algunas de tus sesiones recientes se mostraran aquí, si cres que tu cuenta esta comprometida, puedes actualizar tu contraseña. 
+              Si es necesario, puedes cerrar todas las sesiones de otros navegadores o dispositivos. Algunas de tus sesiones recientes se mostrarán aquí, si creés que tu cuenta está comprometida, puedes actualizar tu contraseña.
            </div>
 
             <!-- Other Browser Sessions -->
@@ -104,8 +104,8 @@ const closeModal = () => {
                             <div class="text-xs text-gray-500">
                                 {{ session.ip_address }},
 
-                                <span v-if="session.is_current_device" class="text-green-500 font-semibold">This device</span>
-                                <span v-else>Ultima actividad {{ session.last_active }}</span>
+                                <span v-if="session.is_current_device" class="text-green-500 font-semibold">Este dispositivo</span>
+                                <span v-else>Última actividad {{ session.last_active }}</span>
                             </div>
                         </div>
                     </div>

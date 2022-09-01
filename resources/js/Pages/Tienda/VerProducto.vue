@@ -14,8 +14,8 @@
                   <div class="flex items-center">
                     <Link
                       :href="route('inicio')"
-                      class="text-sm font-medium text-orange-300"
-                      >AQUATICA
+                      class="text-sm font-medium text-sky-700"
+                      >Aquatic Depot
                     </Link>
                   </div>
                 </li>
@@ -129,9 +129,11 @@
                    <div v-for="(tipo,index) in tipoProducto" :key="index" class="mb-2">
                       <span>{{product.nombre}} / {{tipo.caracteristicas}}</span>
                       <div class="flex items-center mt-2 w-full ">
-                         <button type="button" @click="minus(index)" class="bg-orange-500 text-white h-6 w-6 rounded m-1"><i class="fa-solid fa-minus m-1"></i></button>
-                         <input :data-product-option="tipo.id" :value="cantidad[index]"  class="tipo-producto w-1/2 text-center" type="text" min="0" placeholder="cantidad" readonly/>
-                         <button type="button" @click="more(index)" class="bg-orange-500 text-white h-6 w-6 rounded m-1"><i class="fa-solid fa-plus m-1"></i></button>
+                         <button type="button" @click="minus(index)" class="bg-white border border-slate-200 rounded-md shadow-md text-slate-500 h-6 w-6 rounded m-1"><i class="fa-solid fa-minus m-1"></i></button>
+                         <div class="w-1/2 bg-gray-100 rounded-full">
+                         <input :data-product-option="tipo.id" :value="cantidad[index]"  class="w-full tipo-producto text-center bg-transparent border-transparent focus:border-transparent focus:ring-0" type="text" min="0" placeholder="cantidad" readonly/>
+                         </div>
+                         <button type="button" @click="more(index)" class="bg-white border border-slate-200 rounded-md shadow-md text-slate-500 h-6 w-6 rounded m-1"><i class="fa-solid fa-plus m-1"></i></button>
                       </div>
                    </div>
                    </div>
@@ -139,10 +141,11 @@
                     <div class="mb-2">
                       <span>{{product.nombre}}</span>
                       <div class="flex items-center mt-2 w-full">
-                         <button type="button" @click="minus(0)" class="bg-orange-500 text-white h-6 w-6 rounded m-1"><i class="fa-solid fa-minus m-1"></i></button>
-                         <input  :value="cantidad[0]"  class="w-1/2 text-center" type="text" min="0" placeholder="cantidad" readonly/>
-                         <button type="button" @click="more(0)" class="bg-orange-500 text-white h-6 w-6 rounded m-1"><i class="fa-solid fa-plus m-1"></i></button>
-                     
+                         <button type="button" @click="minus(0)" class="bg-white border border-slate-200 rounded-md shadow-md text-slate-500 h-6 w-6 rounded m-1"><i class="fa-solid fa-minus m-1"></i></button>
+                         <div class="w-1/2 bg-gray-100 rounded-full">
+                         <input  :value="cantidad[0]"  class="w-full text-center bg-transparent border-transparent focus:border-transparent focus:ring-0" type="text" min="0" placeholder="cantidad" readonly/>
+                         </div>
+                         <button type="button" @click="more(0)" class="bg-white border border-slate-200 rounded-md shadow-md text-slate-500 h-6 w-6 rounded m-1"><i class="fa-solid fa-plus m-1"></i></button>
                       </div>
                      </div>
                    </div>
@@ -211,11 +214,11 @@
         </div>
       </section>
       <ActionMessage :on="active">
-        <div class="bg-orange-500 pt-1 pb-4 p-2 fixed bottom-5 right-5 rounded-md">
+        <div class="bg-sky-700 pt-1 pb-4 p-2 fixed bottom-5 right-5 rounded-md">
           <div class="relative h-5">
             <i class="absolute right-0 cursor-pointer fa-solid fa-circle-xmark text-white" @click="active = false"></i>
           </div>
-          <p class="text-white font-bold pl-10 pr-10">{{ messageCarrito }}</p>
+          <p class="text-white pl-10 pr-10">{{ messageCarrito }} <Link class="text-white font-bold" :href="route('verMiCarrito')">Ver mi carrito</Link></p>
         </div>
 
       </ActionMessage>

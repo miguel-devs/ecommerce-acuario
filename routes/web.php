@@ -10,6 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserProfileController;
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\ProductOptionController;
 use App\Http\Controllers\dashboard\OrderController as DashboardOrderController;
@@ -53,11 +54,6 @@ Route::get("/agregar/metodo-pago",function(){
 
 
 
-
-Route::get('/servicios',function(){
-    return Inertia::render('Tienda/Servicios');
-})->name("servicios");
-
 /*
 Route::get('/email/detales-orden',function(){
     $orden = Order::where("id",1)->with("ordersDetail")->first();
@@ -69,9 +65,7 @@ Route::get('/email/detales-orden',function(){
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
-Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard/Inicio');
-})->name('dashboard')->middleware('role:1');
+
 
 /*------------Ruta Producto---------------*/
 Route::get('/dashboard/productos',[DashboardProductController::class,"index"])->name('dashboard.productos')->middleware('role:1');    
@@ -101,6 +95,9 @@ Route::delete("/dashboard/image/delate",[ImageController::class,"destroy"])->nam
 Route::get('/dashboard/ordenes',[DashboardOrderController::class,"index"])->name('dashboard.ordenes')->middleware('role:1');
 Route::get('/dashboard/ordenes/{orden}',[DashboardOrderController::class,"show"])->name('dashboard.ordenes.show')->middleware('role:1');
 Route::put('/dashboard/orden/{orden}/update/{status}',[DashboardOrderController::class,"update"])->name('dashboard.ordenes.update')->middleware('role:1');
+
+/*----------- dashboard user -------------- */
+Route::get('/dashboard/user/profile',[UserProfileController::class,"showDashboard"])->name('dashboard.user.profile')->middleware('role:1');
 
 
 });

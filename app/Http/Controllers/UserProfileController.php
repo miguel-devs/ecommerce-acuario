@@ -64,6 +64,22 @@ class UserProfileController extends Controller
         ]);
     }
 
+     public function showDashboard(Request $request)
+    {
+        $this->validateTwoFactorAuthenticationState($request);
+        /*
+        return Jetstream::inertia()->render($request, 'Profile/Show', [
+            'confirmsTwoFactorAuthentication' => Features::optionEnabled(Features::twoFactorAuthentication(), 'confirm'),
+            'sessions' => $this->sessions($request)->all(),
+        ]);*/
+        return Inertia::render('Dashboard/Profile/Show', [
+            'confirmsTwoFactorAuthentication' => Features::optionEnabled(Features::twoFactorAuthentication(), 'confirm'),
+            'sessions' => $this->sessions($request)->all(),
+        ]);
+    }
+
+
+
     public function sessions(Request $request)
     {
         if (config('session.driver') !== 'database') {

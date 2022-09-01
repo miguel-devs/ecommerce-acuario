@@ -89,6 +89,7 @@ class OrderController extends Controller
      
 
       }catch (\Exception $e) { 
+
             $error = ($e->getDeclineCode())? $e->getDeclineCode() : $e->getStripeCode() ;
             $descripcionError = TipeErrorStripe::messageError($error);
             return redirect()->back()->withErrors(['stripe'=>$descripcionError]);

@@ -19,219 +19,10 @@
         "
       >
         <div class="">
-          <div class="bg-white flex justify-between p-5 mb-4 rounded-md shadow-md">
-            <div>
-              <div class="flex justify-center">
-                <div
-                  class="
-                    h-10
-                    w-10
-                    p-2
-                    text-center
-                    rounded-full
-                    bg-sky-600 shadow-md
-                    text-white
-                    font-bold
-                  "
-                >
-                  <i class="fa-solid fa-check"></i>
-                </div>
-              </div>
-              <p class="text-sky-600 font-bold">Mi carrito</p>
-            </div>
+          
+          <PasosCompra stepOne ="true" />
 
-            <div>
-              <div class="flex justify-center">
-                <div  class=" h-10 w-10 p-2 text-center rounded-full bg-sky-600 shadow-md text-white font-bold">
-                  <span>2</span>
-                </div>
-              
-              </div>
-              <p class="text-sky-600  font-bold">Datos envio</p> 
-            </div>
-            <div>
-              <div class="flex justify-center">
-                <div
-                  v-if="true"
-                  class="
-                    h-10
-                    w-10
-                    p-2
-                    text-center
-                    rounded-full
-                    bg-sky-600 shadow-md
-                    text-white
-                    font-bold
-                  "
-                >
-                  <span>3</span>
-                </div>
-                <div
-                  v-else
-                  class="
-                    h-10
-                    w-10
-                    p-2
-                    text-center
-                    rounded-full
-                    bg-sky-600 shadow-md
-                    text-white
-                    font-bold
-                  "
-                >
-                  <i class="fa-solid fa-check"></i>
-                </div>
-              </div>
-              <p class="text-sky-600  font-bold">Confirmación de orden</p>
-            </div>
-          </div>
-          <div class="rounded-md shadow-md bg-white p-5 mb-2 ">
-             <table
-                v-if="carrito.length > 0"
-                class="border-collapse table-auto w-full text-sm"
-              >
-                <thead class="bg-white dark:bg-slate-800">
-                  <tr>
-                    <th
-                      class="
-                        border-b
-                        dark:border-slate-600
-                        font-medium
-                        p-4
-                        pl-8
-                        pt-0
-                        pb-3
-                        text-slate-400
-                        dark:text-slate-200
-                        text-center
-                      "
-                    >
-                      Producto
-                    </th>
-                    <th
-                      class="
-                        border-b
-                        dark:border-slate-600
-                        font-medium
-                        p-4
-                        pt-0
-                        pb-3
-                        text-slate-400
-                        dark:text-slate-200
-                        text-center
-                      "
-                    >
-                      Precio
-                    </th>
-                    <th
-                      class="
-                        border-b
-                        dark:border-slate-600
-                        font-medium
-                        p-4
-                        pr-8
-                        pt-0
-                        pb-3
-                        text-slate-400
-                        dark:text-slate-200
-                        text-center
-                      "
-                    >
-                      Cantidad
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white dark:bg-slate-800">
-                  <tr v-for="(producto, index) in carrito" :key="index">
-                    <td
-                      class="
-                        border-b border-slate-100
-                        dark:border-slate-700
-                        p-4
-                        pl-8
-                        text-slate-500
-                        dark:text-slate-400
-                        text-center
-                      "
-                      v-if="producto.tipoProductoId"
-                    >
-                      {{ producto.nombre }} /
-                      {{ producto.descripcionTipoProducto }}
-                    </td>
-                    <td
-                      class="
-                        border-b border-slate-100
-                        dark:border-slate-700
-                        p-4
-                        pl-8
-                        text-slate-500
-                        dark:text-slate-400
-                        text-center
-                      "
-                      v-else
-                    >
-                      {{ producto.nombre }}
-                    </td>
-
-                    <td
-                      class="
-                        border-b border-slate-100
-                        dark:border-slate-700
-                        p-4
-                        text-slate-500
-                        dark:text-slate-400
-                        text-center
-                      "
-                    >
-                      ${{ formattedCurrencyValue(producto.precio,carrito[index].cantidad) }}
-                    </td>
-                    <td
-                      class="
-                        border-b border-slate-100
-                        dark:border-slate-700
-                        p-4
-                        pr-8
-                        text-slate-500
-                        dark:text-slate-400
-                        text-center
-                      "
-                    >
-                      <label class="w-1/2 text-center"
-                        >{{ carrito[index].cantidad }}
-                      </label>
-                    </td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                     <tr>
-                    <th
-                     
-                    >
-                      
-                    </th>
-                    <th
-                     
-                    >
-                      
-                    </th>
-                    <th
-                      class="
-                      
-                        font-medium
-                        p-4
-                        pr-8
-                        pt-0
-                        pb-3
-                        text-slate-600
-                        text-center
-                      "
-                    >
-                      Total de la compra: ${{totalPrecioCarrito}}
-                    </th>
-                  </tr>
-                </tfoot>
-              </table>
-          </div>
+         
             <div class="rounded-md shadow-md bg-white">
               <div class=" pt-4 pb-4 pl-4 pr-4">
                 <div class="border-b border-slate-200 pb-2">
@@ -265,7 +56,7 @@
                       />
                     </div>
                     <div>
-                       <JetLabel for="telefono" value="Telefono" />
+                       <JetLabel for="telefono" value="Teléfono" />
                       <JetInput
                         id="telefono"
                         v-model="formDatosEnvio.telefono"
@@ -437,6 +228,7 @@ import JetInput from "@/Jetstream/Input.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import Contacto from "@/Layouts/Contacto.vue";
 import { loadStripe } from '@stripe/stripe-js';
+import PasosCompra from "@/Layouts/PasosCompra.vue";
 
 
 export default {
@@ -450,7 +242,8 @@ export default {
     Link,
     JetInput,
     JetLabel,
-    Contacto
+    Contacto,
+    PasosCompra
   },
   data() {
     return {

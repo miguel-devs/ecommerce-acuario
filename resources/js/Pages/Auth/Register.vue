@@ -24,7 +24,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Register" />
+    <Head title="Registrarme" />
 
     <JetAuthenticationCard>
         <JetValidationErrors class="mb-4" />
@@ -45,7 +45,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <JetLabel for="email" value="Email" />
+                <JetLabel for="email" value="Correo" />
                 <JetInput
                     id="email"
                     v-model="form.email"
