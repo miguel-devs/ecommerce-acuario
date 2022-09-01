@@ -14,7 +14,7 @@
             <img src="/imagenes/logos/logo150-150.png">
             </div>
             <div class="p-4 mb-4 text-gray-700">
-            <p class="text-center text-sky-800 font-semibold mb-2">AQUATICA</p>
+            <p class="text-center text-sky-800 font-semibold mb-2">Aquatic Depot</p>
             <div class="mb-4">
             <p class="text-center">{{order.created_at}}</p>
             <p class="text-center">Ticket de compra: {{ order.id }}</p>     

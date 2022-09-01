@@ -1,5 +1,5 @@
 <template>
-	  <section id="contacto" class="relative bg-cover bg-center bg-no-repeat" style="background-image:url(/imagenes/web/contacto.jpg)">
+	  <section id="contacto" class=" bg-cover bg-center bg-no-repeat" style="background-image:url(/imagenes/web/contacto.jpg)">
         <div class="bg-black/50 w-full h-full">
          <TitleSeparator class="w-full absolute -top-[1.7rem]">
                   Contacto

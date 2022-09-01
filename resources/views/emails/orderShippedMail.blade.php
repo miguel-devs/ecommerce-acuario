@@ -1242,7 +1242,7 @@ body {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text es-p35b">
-                                                                                        <p>AQUATICA&nbsp;© 2022.Todos los derechos reservados.</p>
+                                                                                        <p>Aquatic Depot&nbsp;© 2022.Todos los derechos reservados.</p>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>

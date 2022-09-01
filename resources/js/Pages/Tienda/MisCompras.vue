@@ -3,12 +3,13 @@
   <Head title="Mis compras" />
     <NavBarTienda :totalCarritoProps="totalCarrito"/>
        <NavLeft />
-       <div id="section-categorias" class="w-full min-h-screen bg-sky-700 pt-20 " >
+
+       <div id="section-categorias" class="w-full relative min-h-screen bg-sky-700 pt-20 relative" >
          <section class="w-full h-full flex justify-center pl-10 pr-10 pb-10">
         <div class="w-full min-h-full rounded-md shadow-md p-4  bg-white flex justify-center items-center">
             <div v-if="ordenes.data.length > 0 " class="h-full relative">
             <div class="w-full border-b border-gray-300 pb-3 mb-2">
-                <p class="text-center">Mis compras en AQUATICA</p>
+                <p class="text-center">Mis compras en Aquatic Depot</p>
             </div>
 
                      <div class="w-full overflow-x">
@@ -72,7 +73,7 @@
             </div>
         </div>
          </section>
-         <Contacto/>
+         <Contacto class="fixed bottom-0 w-full"/>
        </div>
 </template>
 
