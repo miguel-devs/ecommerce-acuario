@@ -1225,6 +1225,7 @@ body {
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr>
+                                                                                    <!--
                                                                                     <td align="center" class="esd-block-social es-p15t es-p15b" style="font-size:0">
                                                                                         <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social">
                                                                                             <tbody>
@@ -1237,6 +1238,7 @@ body {
                                                                                             </tbody>
                                                                                         </table>
                                                                                     </td>
+                                                                                  -->
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text es-p35b">
