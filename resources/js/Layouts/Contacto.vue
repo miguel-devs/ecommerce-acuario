@@ -6,7 +6,7 @@
         </TitleSeparator> 
         <div class="flex pl-10 pr-10 pt-24 pb-24">
         <div>
-                   <img src="/imagenes/logos/logo150-150.png" style="width:150px; height:150px">
+                   <img src="/imagenes/logos/logo-pez.png" style="width:150px; ">
        </div>
 <div class="w-full flex justify-between p-5">
         <div class="w-1/2">

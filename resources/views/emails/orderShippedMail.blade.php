@@ -940,7 +940,7 @@ body {
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-image es-p10t es-p10b" style="font-size: 0px;">
-                                                                                        <a href="{{route('inicio')}}"target="_blank"><img src="{{asset('imagenes/logos/logo-pez.jpg')}}" alt style="display: block;" width="100"></a>
+                                                                                        <a href="{{route('inicio')}}"target="_blank"><img src="{{asset('imagenes/logos/logo-pez.png')}}" alt style="display: block;" width="100"></a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>

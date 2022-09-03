@@ -45,8 +45,8 @@ const logout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('inicio')">
-                                     <img class="block lg:hidden h-8 w-auto" src="/imagenes/logos/logo-pez.jpg" alt="Workflow">
-                                     <img class="hidden lg:block h-8 w-auto" src="/imagenes/logos/logo-pez.jpg" alt="Workflow" >
+                                     <img class="block lg:hidden h-8 w-auto" src="/imagenes/logos/logo-pez.png" alt="Workflow">
+                                     <img class="hidden lg:block h-8 w-auto" src="/imagenes/logos/logo-pez.png" alt="Workflow" >
                                 </Link>
                             </div>
 
