@@ -74,8 +74,10 @@
                <p class="text-center text-slate-500 text-2xl ">Total del carrito</p>
 
             <div class="p-5">
-              <p class="mb-5 text-lg text-slate-500 ">Total: <span v-if="totalPrecioCarrito">${{totalPrecioCarrito}}</span><span v-else>$0</span></p>
-              <p class="text-sm text-lg text-slate-500">Impuestos incluidos</p>
+              <p class="mb-5 text-lg text-slate-500 ">Total: 
+                <span v-if="totalPrecioCarrito">${{totalPrecioCarrito}}</span>
+                <span v-else>$0</span>
+              </p>
             </div>
             <div class="w-full relative h-14 mt-5 p-5">
              <Link   v-if="carrito.length > 0" :href="route('datosCarrito')" class="absolute right-0 bg-sky-600 shadow-md font-bold rounded-md pb-2 pt-2 pl-3 pr-3 text-white ">Siguiente</Link>
