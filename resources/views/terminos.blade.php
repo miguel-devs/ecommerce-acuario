@@ -1,4 +1,6 @@
-POLÍTICAS DE PRIVACIDAD DE ECOMMERCE INSTITUTE
+
+
+POLÍTICAS DE PRIVACIDAD DE ACUATIC DEPOT
 –
 Esta Política de Privacidad está destinada a informar a usted, en cuanto visitante o usuario de nuestro Sitio, sobre la manera en la que se recaban sus datos y cómo tratamos su Información Personal y sobre las diversas alternativas que usted posee con respecto al uso de su Información Personal.
 
