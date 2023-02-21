@@ -1,5 +1,5 @@
 <template>
-      <aside id="navLeftDev" class="text-sm h-full fixed z-40 -left-80 md:-left-80 lg:-lef-80"   @mouseover="showNavLeft" @mouseout="hideNavLeft" >
+      <aside id="navLeftDev" class="hidden md:block lg:block text-sm h-full fixed z-40 -left-80 md:-left-80 lg:-lef-80"   @mouseover="showNavLeft" @mouseout="hideNavLeft" >
         <div class="h-full flex">
           
           <div class="w-80 md:w-80 lg:w-80 pt-10 flex justify-center bg-white">

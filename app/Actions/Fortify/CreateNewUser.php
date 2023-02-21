@@ -32,7 +32,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
-
+/*
         $options = [
           "email" => $input['email'],
           "name" => $input['name']
@@ -40,7 +40,7 @@ class CreateNewUser implements CreatesNewUsers
 
         $stripeCustomer = $user->createAsStripeCustomer($options);
 
-
+       */
 
         return $user;
     }

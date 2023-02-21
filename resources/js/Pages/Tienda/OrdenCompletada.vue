@@ -9,12 +9,11 @@
     <section class="w-full min-h-screen bg-sky-600 pt-20 pl-10 pr-10 pb-10">
       <div class="">
        
-       <PasosCompra stepOne ="true" stepTwo="true" stepThree="true" />
 
         <div class="flex justify-center">
           <div v-if="order" class="bg-white w-[30rem] p-2 rounded-md shadow-md">
             <div class="flex justify-center  ">
-            <img src="/imagenes/logos/logo150-150.png">
+               <img src="/imagenes/logos/logo-pez.png" style="width:150px; ">
             </div>
             <div class="p-4 mb-4 text-gray-700">
             <p class="text-center text-sky-800 font-semibold mb-2">Aquatic Depot</p>
@@ -83,7 +82,6 @@ import NavLeft from "@/Layouts/NavLeftDev.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
 import Contacto from "@/Layouts/Contacto.vue";
-import PasosCompra from "@/Layouts/PasosCompra.vue";
 
 export default {
   props: {
@@ -100,7 +98,7 @@ export default {
     ActionMessage,
     TitleSeparator,
     Contacto,
-    PasosCompra
+    
   },
   data() {
     return {

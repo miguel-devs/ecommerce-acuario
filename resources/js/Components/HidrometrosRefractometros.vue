@@ -10,10 +10,10 @@
             <div class="pt-5 pl-10 pr-10  flex">
               <div>
               <div class="p-2">
-                   <div class="font-bold text-white mb-2">Marine Water Hanna Checkers</div>
-                   <div class="font-bold text-white mb-2">Accesorios y estándares</div>
-                   <div class="font-bold text-white mb-2">Sondas y accesorios del controlador</div>
-                   <div class="font-bold text-white mb-2">Temporizadores</div>
+                   <div class="font-bold text-white mb-2"><Link :href="route('ver-productos-categoria',{categoria:'marine-water-hanna-checkers'})">  Marine Water Hanna Checkers</Link></div>
+                   <div class="font-bold text-white mb-2"><Link :href="route('ver-productos-categoria',{categoria:'accesorios-y-estandares'})"> Accesorios y estándares</Link></div>
+                   <div class="font-bold text-white mb-2"><Link :href="route('ver-productos-categoria',{categoria:'sondas-y-accesorios-del-controlador'})"> Sondas y accesorios del controlador</Link></div>
+                   <div class="font-bold text-white mb-2"><Link :href="route('ver-productos-categoria',{categoria:'temporizadores'})"> Temporizadores</Link></div>
               </div>
  
               </div>
@@ -24,11 +24,14 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
+
 export default {
         emits: ['closeCategoriasMarcas'],
+        components:{
+    Link
+  },
 
-    setup() {
-        
-    },
+   
 }
 </script>

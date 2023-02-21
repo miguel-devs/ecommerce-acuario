@@ -19,6 +19,12 @@ class Product extends Model
         'precio',
         'detalles',
         'imagen',
+
+        'alto',
+        'ancho',            
+        'largo',
+        'peso',
+        
         'activo'
 
     ];

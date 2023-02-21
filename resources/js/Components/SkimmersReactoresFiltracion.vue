@@ -23,39 +23,37 @@
       <div class="pt-5 pl-10 pr-10 flex">
         <div>
           <div class="p-2">
-            <div class="font-bold text-white mb-2">Skimmers Internos</div>
-            <div class="text-white">Royal Exclusiv</div>
-            <div class="text-white">Red Sea</div>
-            <div class="text-white">Reef Octopus</div>
-            <div class="text-white">AquaMaxx</div>
-            <div class="text-white">Bubble Magus</div>
-            <div class="text-white">Hydor</div>
-            <div class="text-white">IceCap</div>
-            <div class="text-white">Innovative Marine</div>
-            <div class="text-white">Maxspect</div>
-            <div class="text-white">Nyos</div>
-            <div class="text-white">Eshopps</div>
-            <div class="text-white">Tunze</div>
-            <div class="text-white">Ultra Reef</div>
+            <div class="font-bold text-white mb-2">
+            <Link :href="route('ver-productos-categoria',{categoria:'skimmers-internos'})">Skimmers Internos</Link>
+            </div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'royal-exclusiv'})">Royal Exclusiv</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'red-sea'})">Red Sea</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'reef-octopus'})">Reef Octopus</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'aquamax'})">Aquamax</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'bubble-magus'})">Bubble Magus</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'hydor'})">Hydor</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'ice-cap'})">IceCap</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'innovative-marine'})">Innovative Marine</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'maxspect'})">Maxspect</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'nyos'})">Nyos</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'eshopps'})">Eshopps</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'tunze'})">Tunze</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'ultra-reef'})">Ultra Reef</Link></div>
 
-            <div class="text-white">Royal Exclusiv</div>
           </div>
         </div>
         <div></div>
         <div>
           <div class="p-2">
-            <div class="font-bold text-white mb-2">Reactores</div>
-            <div class="text-white">Algae Scrubbers y Reactores</div>
-            <div class="text-white">Reactores de Biopellets</div>
-            <div class="text-white">Reactores de Carbón y GFO</div>
-            <div class="text-white">Reactores de Calcio</div>
+            <div class="font-bold text-white mb-2"> <Link :href="route('ver-productos-categoria',{categoria:'reactores'})">Reactores</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'boyu'})">Algae Scrubbers y Reactores</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'boyu'})">Reactores de Biopellets</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'boyu'})">Reactores de Carbón y GFO</Link></div>
+            <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'skimmers-internos', marca:'boyu'})">Reactores de Calcio</Link></div>
           </div>
           <div class="p-2">
-            <div class="font-bold text-white mb-2">Filtros</div>
-            <div class="text-white">Algae Scrubbers y Reactores</div>
-            <div class="text-white">Reactores de Biopellets</div>
-            <div class="text-white">Reactores de Carbón y GFO</div>
-            <div class="text-white">Reactores de Calcio</div>
+            <div class="font-bold text-white mb-2"> <Link :href="route('ver-productos-categoria',{categoria:'filtracion'})">Filtros</Link></div>
+           
           </div>
         </div>
       </div>
@@ -64,9 +62,13 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
-  emits: ["closeCategoriasMarcas"],
+  components:{
+    Link
+  },
+  
 
-  setup() {},
-};
+  
+}
 </script>

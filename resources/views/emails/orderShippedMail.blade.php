@@ -1014,9 +1014,7 @@ body {
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td align="center" class="esd-block-image" style="font-size: 0px;">
-                                                                                                        <a href="{{ route('ver-producto',['product'=>$detalle_orden->product_id]) }}" target="_blank">
-                                                                                                            <img class="adapt-img" src="{{asset("imagenes/productos/".$detalle_orden->productOrder[0]->imagen)}}" alt style="display: block;" width="70">
-                                                                                                        </a>
+                                                                                                        
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </tbody>

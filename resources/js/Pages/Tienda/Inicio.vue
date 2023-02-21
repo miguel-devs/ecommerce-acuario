@@ -1,7 +1,7 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
   <Head title="Inicio" />
-    <NavBarTienda :totalCarritoProps="totalCarrito"/>
+    <NavBarTienda :totalCarritoProps="totalCarrito" :propLinksInicio="true"/>
 
     <div v-show="$page.props.flash.message"
         class="fixed bottom-0 p-1 right-4 z-50  mb-4 text-sm bg-white text-slate-700 border border-gray-300 shadow-md rounded-lg "
@@ -116,7 +116,7 @@
       
 
       </section>
-       <section id="section-categorias " class="bg-white relative" >
+       <section id="section-categorias" class="bg-white relative" >
         <TitleSeparator   class="w-full absolute -top-[1.7rem]">
                   Categoriás de productos
         </TitleSeparator>
@@ -138,7 +138,7 @@
            </div>
         </div>   
       </section>
-      <section id="marcas" class="relative bg-white" >
+      <section id="section-marcas" class="relative bg-white" >
         <TitleSeparator class="w-full absolute -top-[1.7rem]">
                   Marcas Destacadas
         </TitleSeparator> 
@@ -179,7 +179,7 @@ export default {
     NavLeft,
     Link,
     TitleSeparator,
-    Contacto
+    Contacto,
   },
   props: {
     productosCarrito:Object,

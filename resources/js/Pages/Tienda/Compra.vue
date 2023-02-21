@@ -6,9 +6,8 @@
     <NavBarTienda  />
     <NavLeft />
 
-    <section class="w-full min-h-screen bg-sky-600 pt-20 pl-10 pr-10 pb-10">
-      <div class="">
-        <div class="flex justify-center">
+    <section class="w-full h-screen bg-sky-600 pt-20 pl-10 pr-10 pb-10">
+        <div class="h-full flex items-center justify-center">
           <div v-if="order" class="bg-white w-[30rem] p-2 rounded-md shadow-md">
             <div class="flex justify-center  ">
             <img src="/imagenes/logos/logo150-150.png">
@@ -63,7 +62,6 @@
           <div v-else class="bg-white w-1/2  p-5 rounded-md shadow-md">
             <p class="text-center">No tienes ninguna orden registrada</p>
           </div>
-        </div>
       </div>
     </section>
       <Contacto/>

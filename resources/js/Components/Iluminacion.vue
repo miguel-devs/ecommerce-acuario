@@ -36,8 +36,6 @@ export default {
     Link
   },
 
-    setup() {
-        
-    },
+   
 }
 </script>

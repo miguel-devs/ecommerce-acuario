@@ -5,15 +5,28 @@ import { Inertia } from '@inertiajs/inertia';
 import ListProductosEncontrados from '@/Components/ListProductosEncontrados.vue';
 import JetDropdown from '@/Jetstream/Dropdown.vue';
 import JetDropdownLink from '@/Jetstream/DropdownLink.vue';
-
+import NavMovil from '@/Layouts/NavMovil.vue';
 export default {
  components: {
       Link,JetDropdown,JetDropdownLink,
-      ListProductosEncontrados
+      ListProductosEncontrados,
+      NavMovil
     },
 
-    props:["totalCarritoProps"],
 
+    props: {
+   
+    totalCarritoProps:  {
+      type: Number,
+      required: false,
+      default:0
+    },
+    propLinksInicio:{
+      type: Boolean,
+      required: false
+    }
+    
+    }, 
     data() {
         return {
             searchProduct: "", 
@@ -21,6 +34,7 @@ export default {
             loadSearchProduct:false,
             notFoundProduct:false,
             totalCarrito:null,
+            showLinksInicio:null,
         }
     },
     watch: {
@@ -99,11 +113,13 @@ export default {
 <nav class="w-full fixed top-0 bg-white shadow-md z-50  text-sm">
 
   <div class="max-w-7xl mx-auto pl-2 pr-2">
+
     <div class="relative flex items-center justify-between h-16">
+
       <!--sandwich movil-->
       <div class="absolute left-0 flex items-center lg:hidden">
         <!-- Mobile menu button-->
-        <button type="button" v-on:click="showMenuMovil" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+        <button type="button" v-on:click="showMenuMovil" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
     
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
@@ -124,27 +140,45 @@ export default {
                  <img class="hidden lg:block h-8 w-auto" src="/imagenes/logos/logo-pez.png" alt="Workflow" >  
                 
            </Link>
-           <div class="relative bg-slate-100 flex text-gray-700 font-bold rounded-lg">
-               <div class="p-2"><i class="fa-solid fa-magnifying-glass"></i></div>
-               <input v-model="searchProduct" class="bg-transparent border-transparent focus:border-transparent focus:ring-0" type="text" placeholder="Buscar" />
-           </div>
+           <div class="relative bg-slate-100  text-gray-400 font-bold rounded-lg w-48 lg:w-56	 h-8		pl-2 pr-2">
+                <div class="flex items-center h-full">
+                   <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                   <input v-model="searchProduct" class="bg-transparent border-transparent focus:border-transparent focus:ring-0" type="text" placeholder="Buscar" />
+                </div>
+               </div>
           
         </div>
-        <div class="hidden lg:block  w-full sm:ml-4">
-          <div class="flex lg:justify-center items-center gap-6">
-                 <Link :href="route('inicio')" class="text-gray-700 hover:text-sky-500 hover:text-lg px-3 py-2 rounded-md  font-semibold">
+        <div class="hidden lg:block   pl-6 pr-6">
+          <div class="flex justify-center items-center gap-6">
+
+                 <Link v-if="propLinksInicio == false"  :href="route('inicio')" class="text-gray-700 hover:text-sky-500  px-3 py-2 rounded-md  font-semibold">
                     Inicio
                  </Link>
-                 <Link :href="route('ofertas')" class="text-gray-700 hover:text-sky-500 hover:text-lg px-3 py-2 rounded-md  font-semibold">
+
+                 <Link  :href="route('tienda')" class="text-gray-700 hover:text-sky-500  px-1 py-2 rounded-md  font-semibold">
+                    Tienda
+                 </Link>
+
+                 <a v-if="propLinksInicio" href="#productos" class="text-gray-700 hover:text-sky-500  px-2 py-2 rounded-md  font-semibold">
+                    Productos
+                  </a>
+
+                 <a v-if="propLinksInicio" href="#section-categorias" class="text-gray-700 hover:text-sky-500  px-2 py-2 rounded-md  font-semibold">
+                    Categorias
+                  </a>
+
+                  <a v-if="propLinksInicio" href="#section-marcas" class="text-gray-700 hover:text-sky-500  px-2 py-2 rounded-md  font-semibold">
+                    Marcas
+                  </a>
+                
+                 <Link :href="route('ofertas')" class="text-gray-700 hover:text-sky-500  px-2 py-2 rounded-md  font-semibold">
                     Ofertas
                  </Link>
-                 <Link :href="route('novedades')" class="text-gray-700 hover:text-sky-500 hover:text-lg px-3 py-2 rounded-md  font-semibold">
+                 <Link :href="route('novedades')" class="text-gray-700 hover:text-sky-500  px-2 py-2 rounded-md  font-semibold">
                     Novedades
                  </Link>
                  
-                 <Link v-if="false" :href="route('calculadora')" class="text-gray-700 hover:text-sky-500 hover:text-lg px-3 py-2 rounded-md font-semibold">
-                    Calculadora
-                 </Link>
+                
                              
                   <a href="#contacto" class="text-gray-700 hover:text-sky-500 hover:text-lg px-3 py-2 rounded-md  font-semibold">
                     Contacto
@@ -244,42 +278,59 @@ export default {
                             </div>
                         </div>
 
-                            <Link :href="route('perfil.show')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"  :active="route().current('profile.show')">
+                            <Link :href="route('perfil.show')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"  :active="route().current('profile.show')">
                                 Perfil
                             </Link>
 
-                             <Link v-if="$page.props.user.role_id == 1" :href="route('dashboard.productos')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"  :active="route().current('profile.show')">
+                             <Link v-if="$page.props.user.role_id == 1" :href="route('dashboard.productos')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"  :active="route().current('profile.show')">
                                 Dashboard
                             </Link>
 
                             <!-- Authentication -->
-                            <form method="POST" @submit.prevent="logout" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
+                            <form method="POST" @submit.prevent="logout" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
                                 <button>
                                     Cerrar sesión
                                 </button>
                             </form>
     </div>
     <div v-else>
-       <Link :href="route('login')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
+       <Link :href="route('login')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
                               <i class="fa-solid fa-user "></i> 
                               <span class="ml-2">iniciar sersión</span>
        </Link>
     </div>
-                 <Link :href="route('inicio')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
-                   Inicio
+
+
+                 <NavMovil/>         
+                
+                 <Link v-if="propLinksInicio == false"  :href="route('inicio')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
+                    Inicio
+                 </Link>
+                 
+                 <Link  :href="route('tienda')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
+                    Tienda
                  </Link>
 
-                 <Link :href="route('ofertas')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
+                 <a v-if="propLinksInicio" href="#productos" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
+                    Productos
+                  </a>
+
+                 <a v-if="propLinksInicio" href="#section-categorias" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
+                    Categorias
+                  </a>
+
+                  <a v-if="propLinksInicio" href="#section-marcas" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">
+                    Marcas
+                  </a>
+                 <Link :href="route('ofertas')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
                    Ofertas
                  </Link>
-                 <Link :href="route('novedades')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
+                 <Link :href="route('novedades')" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
                    Novedades
                  </Link>
                  
-                 <Link v-if="false" :href="route('calculadora')" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
-                    Calculadora
-                 </Link>
-                 <Link href="#" class="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
+               
+                 <Link href="#" class="text-gray-500 hover:bg-sky-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" >
                     Contacto
                  </Link>
                  

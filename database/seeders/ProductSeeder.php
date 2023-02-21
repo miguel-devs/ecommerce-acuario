@@ -28,6 +28,11 @@ class ProductSeeder extends Seeder
             "detalleProducto" => $detallesProducto,
             "mostrarProducto" => "si",
             "imagen" => "max-e-170-title.jpg",
+            'alto' => "142 ",
+            'ancho'=> "57.5",            
+            'largo'=> "60",
+            'peso' => "50",
+
         ), array(
             "nombreProducto" => "Max E-260 LED Complete Reef System (69 Gal) - Red Sea",
             "descripcionProducto" => "Max E-260 LED Complete Reef System - Black - RedSea",
@@ -37,6 +42,10 @@ class ProductSeeder extends Seeder
             "detalleProducto" => $detallesProducto,
             "mostrarProducto" => "si",
             "imagen" => "max-e-260-title.jpg",
+            'alto' => "142 ",
+            'ancho'=> "57.5",            
+            'largo'=> "60",
+            'peso' => "50",
 
         ), array(
             "nombreProducto" => "RF-25-Rimless-Flat-Panel Aquarium&Stand(25 Gal)-JBJ",
@@ -47,6 +56,10 @@ class ProductSeeder extends Seeder
             "detalleProducto" => $detallesProducto,
             "mostrarProducto" => "si",
             "imagen" => "RF-25-Rimless-Flat-Panel-Aquarium-Stand.jpg",
+            'alto' => "142 ",
+            'ancho'=> "57.5",            
+            'largo'=> "60",
+            'peso' => "50",
 
         ));
 
@@ -64,6 +77,10 @@ class ProductSeeder extends Seeder
                         'precio' => $producto["precioProducto"],
                         'detalles' => $producto["detalleProducto"],
                         'imagen' => $producto["imagen"],
+                        'alto' => $producto["alto"],
+                        'ancho'=> $producto["ancho"],        
+                        'largo'=>$producto["largo"],
+                        'peso'=>$producto["peso"],
                         'activo' => $producto["mostrarProducto"],
                     ]);
                 }

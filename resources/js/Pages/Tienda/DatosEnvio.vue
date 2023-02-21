@@ -20,7 +20,6 @@
       >
         <div class="">
           
-          <PasosCompra stepOne ="true" />
 
          
             <div class="rounded-md shadow-md bg-white">
@@ -172,7 +171,7 @@
                       />
                     </div>
                     <div class="flex flex-wrap -mx-2 mt-4">
-                <div class="p-2 w-full">
+                <div class="p-2 w-full" v-if="false">
                     <div class="relative">
                         <label for="card-element" class="leading-7 text-sm text-gray-600">Datos de la tarjeta <br><span class="text-xs">Por seguridad, no guardamos los datos de tu tarjeta.</span></label>
                         <div id="card-element"></div>
@@ -195,7 +194,7 @@
                           pr-2
                         "
                          @click="processPayment"
-                          v-text="paymentProcessing ? 'Procesando pago' : 'Pagar ahora'"
+                          v-text="paymentProcessing ? 'Procesando pedido' : 'Realizar pedido'"
                           :disabled='paymentProcessing'
                       >
                        
@@ -228,7 +227,6 @@ import JetInput from "@/Jetstream/Input.vue";
 import JetLabel from "@/Jetstream/Label.vue";
 import Contacto from "@/Layouts/Contacto.vue";
 import { loadStripe } from '@stripe/stripe-js';
-import PasosCompra from "@/Layouts/PasosCompra.vue";
 
 
 export default {
@@ -243,7 +241,6 @@ export default {
     JetInput,
     JetLabel,
     Contacto,
-    PasosCompra
   },
   data() {
     return {
@@ -291,6 +288,7 @@ export default {
   },
   methods: {
 
+/*
 
     async processPayment() {
                 this.paymentProcessing = true;
@@ -341,10 +339,38 @@ export default {
                 }
 
 
+            },*/
+
+
+ processPayment() {
+                this.paymentProcessing = true;
+
+               
+
+              
+                    this.formDatosEnvio.total = this.totalPrecioCarrito;
+                    this.formDatosEnvio.carrito = this.carrito;
+                     
+                    
+
+
+                  this.$inertia.visit("/realizar-orden", {
+  method: 'post',
+  data: { datos: this.formDatosEnvio},
+   preserveScroll: true,
+                    replace: true ,
+                    preserveState: true,
+
+  onError: errors => {
+                      this.paymentProcessing = false;
+  },
+})
+                    
+                   
+                        
+
+
             },
-
-
-
 
 
     formattedCurrencyValue(precio,cantidad){

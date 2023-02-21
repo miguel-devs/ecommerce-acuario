@@ -24,7 +24,8 @@ class BrandSeeder extends Seeder
           'Instant Ocean','Reef Crystals','Coralife','Red Sea Coral Pro','Red Sea Mix',
           'Jets de regreso','Brightwell','Bulk reef supply','Spectrum','Reef Nutrition',
           'Ocean Nutrition','Hikari','Two Little Fishies','Brightwell Aquatics','Tetra',
-          'Seachem','Nyos','Tubería','Válvula','AquaIllumination'
+          'Seachem','Nyos','Tubería','Válvula','AquaIllumination','Royal Exclusiv','Bubble Magus',
+          'Hydor','Eshopps','Tunze','Ultra Reef'
         );
        
        

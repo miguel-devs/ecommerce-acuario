@@ -10,21 +10,17 @@
             <div class="pt-5 pl-10 pr-10 flex">
               <div>
               <div class="p-2">
-                     <div class="text-white font-bold mb-2"> Kits multiparamétricos</div>
-                     <div class="text-white font-bold mb-2"> Alcalinidad</div>
-                     <div class="text-white font-bold mb-2"> Calcio</div>
-                     <div class="text-white font-bold mb-2"> Magnesio</div>
-                     <div class="text-white font-bold mb-2"> Fosfato</div>
-                     <div class="text-white font-bold mb-2"> Nitrato y nitrito</div>
-                     <div class="text-white font-bold mb-2"> Amoníaco</div>
-                     <div class="text-white font-bold mb-2"> pH</div>
-                     <div class="text-white font-bold mb-2"> Oligoelementos menores</div>
-                     <div class="text-white font-bold mb-2"> Controladores y monitores</div>
-                     <div class="text-white font-bold mb-2"> Neptune Systems Apex</div>
-                     <div class="text-white font-bold mb-2"> CoralVue Hidros</div>
-                     <div class="text-white font-bold mb-2"> Milwaukee</div>
-                     <div class="text-white font-bold mb-2"> Pinpoint</div>
-                     <div class="text-white font-bold mb-2"> Tunze</div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-multiparametricos'})"> Kits multiparamétricos</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-alcalinidad'})"> Alcalinidad</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-calcio'})"> Calcio</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-magnesio'})"> Magnesio</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-fosfato'})"> Fosfato</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-nitrato-y-nitrito'})"> Nitrato y nitrito</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-amoniaco'})"> Amoníaco</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-ph'})"> pH</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'oligoelementos-menores'})"> Oligoelementos menores</Link></div>
+                     <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'controladores-y-monitores'})"> Controladores y monitores</Link></div>
+                    
               </div>
 
               </div>
@@ -36,11 +32,13 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
-        emits: ['closeCategoriasMarcas'],
+  components:{
+    Link
+  },
+  
 
-    setup() {
-        
-    },
+  
 }
 </script>

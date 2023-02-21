@@ -4,9 +4,13 @@
     <NavBarTienda :totalCarritoProps="totalCarrito"/>
        <NavLeft />
 
-       <div id="section-categorias" class="w-full relative min-h-screen bg-sky-700 pt-20 relative" >
-         <section class="w-full h-full flex justify-center pl-10 pr-10 pb-10">
-        <div class="w-full min-h-full rounded-md shadow-md p-4  bg-white flex justify-center items-center">
+       <div  class="w-full relative bg-sky-700 pt-20 relative" >
+
+        
+         <section class="w-full h-screen  pl-10 pr-10 pb-10 flex items-center ">
+
+
+        <div class="w-full h-3/4	 rounded-md shadow-md p-4  bg-white ">
             <div v-if="ordenes.data.length > 0 " class="h-full relative">
             <div class="w-full border-b border-gray-300 pb-3 mb-2">
                 <p class="text-center">Mis compras en Aquatic Depot</p>
@@ -65,7 +69,7 @@
                                  <Pagination :links="ordenes"/>
                      </div>
             </div>
-            <div v-else>
+            <div v-else >
                 <p class="text-center text-3xl font-semibold text-gray-500 mb-4">¡Usted todavia no tiene pedidos!</p>
                 <div class="w-full flex justify-center">
                      <Link :href="route('tienda')" class="bg-sky-600 px-3 py-2  rounded-md shadow-md text-white">Ir a la tienda</Link>
@@ -73,12 +77,12 @@
             </div>
         </div>
          </section>
-         <Contacto class="fixed bottom-0 w-full"/>
+      <Contacto/>
        </div>
 </template>
 
 
-<script >
+<script>
 import { Head } from "@inertiajs/inertia-vue3";
 import NavBarTienda from "@/Layouts/NavBarTienda.vue";
 import NavLeft from "@/Layouts/NavLeftDev.vue";
@@ -105,7 +109,6 @@ export default {
     }
   },
   mounted(){
-    console.log(this.ordenes);
      if (localStorage.getItem("carrito")) {
       this.totalCarrito = JSON.parse(localStorage.getItem("carrito")).length;
     }

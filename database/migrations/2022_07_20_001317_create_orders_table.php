@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('correo', 250);
             $table->string('calle', 250);
             $table->string('noExterior', 10);
-            $table->string('noInterior', 10);
+            $table->string('noInterior', 10)->nullable(true);
             $table->string('cp', 10);
             $table->string('colonia', 250);
             $table->string('municipioDelegacion',250);

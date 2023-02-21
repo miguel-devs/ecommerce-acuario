@@ -10,19 +10,22 @@
             <div class="pt-5 pl-10 pr-10 flex">
               <div>
               <div class="p-2">
-                   <div class="text-white font-bold mb-2">Sistemas de ósmosis inversa</div>
-                   <div class="text-white font-bold mb-2">Sistemas RO/DI de 4 etapas</div>
-                   <div class="text-white font-bold mb-2">Sistemas RO/DI de 5 etapas</div>
-                   <div class="text-white font-bold mb-2">Sistemas RO/DI de 6 etapas</div>
-                   <div class="text-white font-bold mb-2">Sistemas RO/DI de 7 etapas</div>
-                   <div class="text-white font-bold mb-2">Membranas de ósmosis inversa</div>
-                   <div class="text-white font-bold mb-2">Accesorios de ósmosis inversa</div>
-                   <div class="text-white font-bold mb-2">Bombas de refuerzo y accesorios</div>
-                   <div class="text-white font-bold mb-2">Monitores, medidores y controladores</div>
-                   <div class="text-white font-bold mb-2">Kits de actualización</div>
-                   <div class="text-white font-bold mb-2">Accesorios</div>
-                   <!--<div class="text-white font-bold mb-2">Tubería</div>-->
-                   <!--<div class="text-white font-bold mb-2">Válvulas</div>-->
+                   <div class="text-white font-bold mb-2">
+                    <Link :href="route('ver-productos-categoria',{categoria:'sistemas-de-osmosis-inversa'})">Sistemas de ósmosis inversa</Link>
+                  </div>
+                   <div class="text-white font-bold mb-2">
+                    <Link :href="route('ver-productos-categoria',{categoria:'sistemas-rodi-de-4-etapas'})">Sistemas RO/DI de 4 etapas</Link></div>
+                   <div class="text-white font-bold mb-2">
+                    <Link :href="route('ver-productos-categoria',{categoria:'sistemas-rodi-de-5-etapas'})">Sistemas RO/DI de 5 etapas</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'sistemas-rodi-de-6-etapas'})">Sistemas RO/DI de 6 etapas</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'sistemas-rodi-de-7-etapas'})">Sistemas RO/DI de 7 etapas</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'membranas-de-osmosis-inversa'})">Membranas de ósmosis inversa</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'accesorios-de-osmosis-inversa'})">Accesorios de ósmosis inversa</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'bombas-de-refuerzo-y-accesorios'})">Bombas de refuerzo y accesorios</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'monitores-medidores-y-controladores'})">Monitores, medidores y controladores</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'kits-de-actualizacion'})">Kits de actualización</Link></div>
+                   <div class="text-white font-bold mb-2"><Link :href="route('ver-productos-categoria',{categoria:'accesorios-oi'})">Accesorios</Link></div>
+              
 
               </div>
                </div>
@@ -33,11 +36,13 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
-        emits: ['closeCategoriasMarcas'],
+  components:{
+    Link
+  },
+  
 
-    setup() {
-        
-    },
+  
 }
 </script>

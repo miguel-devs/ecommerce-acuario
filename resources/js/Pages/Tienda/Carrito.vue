@@ -10,7 +10,6 @@
          
         <div class="">
           
-          <PasosCompra/>
 
          <div class="lg:grid  lg:grid-cols-3 lg:grid-flow-col gap-4">
           
@@ -55,7 +54,7 @@
   </tbody>
             </table>
          </div>
-         <div v-else>
+         <div v-else class="">
             <p class="text-center text-gray-700">No hay productos en el carrito</p>
           </div>
          </div>
@@ -124,7 +123,6 @@ import NavLeft from "@/Layouts/NavLeftDev.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
 import Contacto from "@/Layouts/Contacto.vue";
-import PasosCompra from "@/Layouts/PasosCompra.vue";
 
 
 export default {
@@ -139,7 +137,6 @@ export default {
     Link,
     TitleSeparator,
     Contacto,
-    PasosCompra
   },
   data() {
     return {

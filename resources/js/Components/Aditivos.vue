@@ -16,12 +16,7 @@
                       <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'nutricion-coralina', marca:'aquaforest'})">Nutrición coralina</Link></div>
                       <div class="text-white"><Link :href="route('ver-productos-categoria-marca',{categoria:'biofiltracion-control-de-nutrientes', marca:'aquaforest'})">Biofiltración & Control de nutrientes</Link></div>
                   </div>
-                  <div class="p-2">
-                       <div class="font-bold text-white mb-2">Bulk reef supply</div>
-                       <div class="text-white">Kalkwasser</div>
-                       <div class="text-white ">Calcio, alcalinidad y magnesio </div>
-
-                  </div>
+                  
                   
               </div>
               <div class="p-3">

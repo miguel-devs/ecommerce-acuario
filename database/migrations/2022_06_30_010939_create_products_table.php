@@ -22,6 +22,12 @@ return new class extends Migration
             $table->decimal('precio', 8, 2)->nullable(false)->default(0.0);
             $table->text('detalles')->nullable();
             $table->string('imagen', 250)->nullable(false);
+
+            $table->decimal('alto', 8, 2)->nullable(false)->default(0.0);
+            $table->decimal('ancho', 8, 2)->nullable(false)->default(0.0);            
+            $table->decimal('largo', 8, 2)->nullable(false)->default(0.0);
+            $table->decimal('peso', 4, 2)->nullable(false)->default(0.0);
+
             $table->enum('activo', ['si', 'no'])->nullable()->default('no');
             $table->timestamps();
         });

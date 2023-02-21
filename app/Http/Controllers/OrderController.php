@@ -28,14 +28,17 @@ class OrderController extends Controller
    
     public function store(Request $request)
     {
-
-       try{
+        //try{
 
         $user = Auth::user();
         $datosOrden = $request->datos;
-        $paymentMethod = $datosOrden["payment_method_id"];
+        
+        
+   
+
+       // $paymentMethod = $datosOrden["payment_method_id"];
         $total = $datosOrden["total"] * 100;  
-         
+         /*
          $payment = $user->charge($total, $paymentMethod, [
              'currency' => 'mxn',
              'customer' => $user->stripe_id,
@@ -43,10 +46,11 @@ class OrderController extends Controller
              'description' => "Nuevo pago recibido",
           ]);
           $payment = $payment->asStripePaymentIntent();
+          */
 
         $order = Order::create([
            "user_id" => $user->id,
-           'transaction_id' => $payment->charges->data[0]->id,
+           'transaction_id' => null ,// $payment->charges->data[0]->id,
            "nombre" =>$datosOrden["nombre"],
            "correo" => $datosOrden["correo"],
            "telefono" => $datosOrden["telefono"],
@@ -64,8 +68,10 @@ class OrderController extends Controller
          $carritoProductos = $datosOrden["carrito"];
 
          foreach($carritoProductos as $carritoProducto){
+
             $tipoProducto = (isset($carritoProducto["tipoProductoId"]))?$carritoProducto["tipoProductoId"]:"";
             $caracteristicas = (isset($carritoProducto["descripcionTipoProducto"]))?$carritoProducto["descripcionTipoProducto"]:"";
+            
             $descripcionproducto = $carritoProducto["nombre"];
             if($caracteristicas){
                $descripcionproducto = $descripcionproducto." / ".$caracteristicas;
@@ -87,6 +93,7 @@ class OrderController extends Controller
          Mail::to($request->user())->send(new OrderShipped($order));
          return redirect()->route('compra.completada', ['order' => $order->id]); 
      
+   /*
 
       }catch (\Exception $e) { 
 
@@ -98,9 +105,9 @@ class OrderController extends Controller
             //return redirect()->back()->with('errorStripe', $e->getMessage())->withErrors(['stripe'=>$e->getMessage()]);
             //return redirect()->back()->withErrors(['stripe'=>$e->getMessage()]);
       }
-
                
 
+      */
 
       
        
