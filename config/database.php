@@ -50,7 +50,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'aquaticdepot'),
             'username' => env('DB_USERNAME', 'acuaticdepot23'),
-            'password' => env('DB_PASSWORD', 'p?fPB5UY{.(-'),
+            'password' => env('DB_PASSWORD', '@AcuaticDepot23'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
