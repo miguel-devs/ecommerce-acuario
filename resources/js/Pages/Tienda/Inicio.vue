@@ -44,8 +44,8 @@
        </TitleSeparator> 
 
       <div id="productos" class="pl-10 pr-10 pt-20 pb-20 ">
-            <div class="h-1/2 grid grid-cols-2 lg:grid-cols-5 gap-4  content-center overflow-x">
-            <div class="bg-white border border-gray-100 p-2 rounded-md shadow-md relative" v-for="(productoAleatorio, index) in productosAleatorios" :key="index"  >
+            <div v-if="productosAleatorios.length > 0" class="h-1/2 grid grid-cols-2 lg:grid-cols-5 gap-4  content-center overflow-x">
+            <div  v-for="(productoAleatorio, index) in productosAleatorios" :key="index"  class="bg-white border border-gray-100 p-2 rounded-md shadow-md relative"  >
                 <div v-if="productoAleatorio.offer" class="absolute rounded-full bg-sky-700 text-white p-1 text-sm h-8 w-8 flex justify-center items-center">
                     {{productoAleatorio.offer.descuento}}% 
                 </div>
@@ -71,6 +71,20 @@
                   <Link :href="route('ver-producto',{product:productoAleatorio.id})"  class="bg-sky-400 pt-1 pb-1 pl-4 pr-4 text-white rounded-md ">Añadir al carrito</Link>
                 </div>
             </div>
+            
+            </div>
+            <div v-else class="h-96 w-full flex justify-center items-center">
+               <div>    
+               <div class="flex justify-center">
+               <img src="/imagenes/logos/logo-pez.png" style="width:150px; ">
+               </div>
+               <div class="flex justify-center">
+                <div class="text-center ">
+                      <p class="text-4xl text-center">Aun no hay productos registrados</p>
+                      <p  class="text-3xl text-center">Pronto agregaremos productos a nuestro catalogo</p>
+                    </div>
+               </div>
+              </div>
             </div>
 
             <div v-if="productosMasVendidos.length > 0" class="pl-10 pr-10 pt-20 pb-20">
@@ -110,34 +124,14 @@
                </div>
             </div>
             </div>
+            
          
       </div>
       
-      
-
       </section>
-       <section id="section-categorias" class="bg-white relative" >
-        <TitleSeparator   class="w-full absolute -top-[1.7rem]">
-                  Categoriás de productos
-        </TitleSeparator>
-        <div class="p-5">  
-           <div class="flex flex-wrap justify-center items-center p-5 gap-5 min-h-screen w-full">
-               <Link :href="route('ver-productos-categoria',{categoria:productoCategoria.category.url_clean})" style="width:200px; height:200px; overflow: hidden;" class="relative bg-white rounded-full border-4 border-sky-500 shadow-md" v-for="(productoCategoria, index ) in productosCategorias" :key="index">
-                     <div class="absolute z-20 w-full h-full bg-black/50">
-                     </div>
+     
+      <TheSectionCategorias></TheSectionCategorias>
 
-                     <div class="absolute  z-10 p-2">
-                         <img :src="`/imagenes/productos/${productoCategoria.imagen}`" class="w-full object-center"/>
-                     </div>
-                     <div class="absolute z-30 w-full h-full">
-                         <div class="w-full h-full flex justify-center items-center p-5">
-                           <p class="break-words text-center font-bold text-white">{{productoCategoria.category.nombre}}</p>
-                         </div>
-                     </div>
-               </Link>
-           </div>
-        </div>   
-      </section>
       <section id="section-marcas" class="relative bg-white" >
         <TitleSeparator class="w-full absolute -top-[1.7rem]">
                   Marcas Destacadas
@@ -171,6 +165,7 @@ import NavLeft from "@/Layouts/NavLeftDev.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
 import Contacto from "@/Layouts/Contacto.vue";
+import TheSectionCategorias from "@/Components/TheSectionCategorias.vue";
 
 export default {
   components: {
@@ -180,6 +175,7 @@ export default {
     Link,
     TitleSeparator,
     Contacto,
+    TheSectionCategorias
   },
   props: {
     productosCarrito:Object,
@@ -197,7 +193,6 @@ export default {
     }
      this.ProdAleatorios();
      this.ProdMasVendidos();
-     this.ProdCategorias();
   },
 
   methods: {
@@ -249,22 +244,7 @@ export default {
                }
               });
     },
-    ProdCategorias(){
-      axios
-            .get(`/api/productos/category-random-products`)
-            .then(response => {
-               this.productosCategorias = response.data;
-
-               if(response.data.length > 0){
-                  // this.loadSearchProduct = false;
-                   //this.productosEncontrados = response.data;
-               }else{
-                  // this.loadSearchProduct = false;  
-                  // this.productosEncontrados = null;
-                  // this.notFoundProduct = true;
-               }
-              });
-    },
+   
   },
   
 };
