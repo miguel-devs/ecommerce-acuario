@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-/*
+
+        /*
         $this->call([
             CategorySeeder::class,
             BrandSeeder::class,
@@ -30,7 +31,9 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             OfferSeeder::class
         ]);
-*/
+        */
+
+
         $this->call([
             CategorySeeder::class,
             BrandSeeder::class,

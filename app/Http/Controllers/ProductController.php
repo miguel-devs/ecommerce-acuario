@@ -97,7 +97,7 @@ class ProductController extends Controller
         ->whereDate('desde', '<=', date("Y-m-d"))
         ->whereDate('hasta', '>=', date("Y-m-d"))
         ->paginate(12);
-
+ 
 
         return Inertia::render('Tienda/Ofertas',compact("productos"));
     }
