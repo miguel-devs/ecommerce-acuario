@@ -12,3 +12,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+.env
+/app/Providers/AppServiceProvider.php
+/public/index.php
+.env_produccion

@@ -117,7 +117,7 @@ export default {
     <div class="relative flex items-center justify-between h-16">
 
       <!--sandwich movil-->
-      <div class="absolute left-0 flex items-center lg:hidden">
+      <div class="flex items-center lg:hidden">
         <!-- Mobile menu button-->
         <button type="button" v-on:click="showMenuMovil" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -132,11 +132,11 @@ export default {
         </button>
       </div>
 
-      <div class="flex-1 flex items-center justify-center ">
+      <div class="flex-1 flex items-center justify-between ">
+
         <div class="flex-shrink-0 flex items-center">
          
            <Link :href="route('inicio')" class="text-gray-500 hover:text-sky-500  hover:text-md px-3 py-2 rounded-md text-sm font-bold">
-                 <img class="block lg:hidden h-8 w-auto" src="/imagenes/logos/logo-pez.png" alt="Workflow">
                  <img class="hidden lg:block h-8 w-auto" src="/imagenes/logos/logo-pez.png" alt="Workflow" >  
                 
            </Link>
@@ -148,6 +148,7 @@ export default {
                </div>
           
         </div>
+
         <div class="hidden lg:block   pl-6 pr-6">
           <div class="flex justify-center items-center gap-6">
 
@@ -187,7 +188,7 @@ export default {
         </div>
       </div>
 
-      <div class="absolute right-0 flex items-center p-2">
+      <div class="flex items-center p-2">
 
        <div class="hidden sm:flex sm:items-center sm:ml-6">
                             
@@ -264,7 +265,10 @@ export default {
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="hidden md:hidden lg:hidden" id="mobile-menu" >
   
-    <div class="px-2 pt-2 pb-3 space-y-1">
+    <div class="px-2 pt-2 pb-3 space-y-1 overflow-y-auto pr-2 scroll scroll-track scroll-thumb max-h-96 ">
+<div class="flex justify-center w-full" >
+        <img class="block lg:hidden h-8 w-auto" src="/imagenes/logos/logo-pez.png" alt="Workflow">
+</div>
         <div v-if="$page.props.user" class="pt-4 pb-1 border-t border-gray-200">
                         <div class="flex items-center px-4">
                             

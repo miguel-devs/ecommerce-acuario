@@ -17,7 +17,85 @@ use App\Http\Controllers\dashboard\OrderController as DashboardOrderController;
 use App\Http\Controllers\dashboard\ProductController as DashboardProductController;
 use App\Mail\OrderShipped;
 
+/*
+Route::get("/pruebas-stripe",function(){
+     $stripe = new \Stripe\StripeClient(
+        Config('constants.stripe.STRIPE_SECRET')
+      );
 
+   $productoID = "prod_NOo8C7FqpPWkN2";   
+
+   //-------- Buscar precio por producto-------------//
+
+      //  $precio = $stripe->prices->search(['query' => 'product:\'\'prod_NOo8C7FqpPWkN2']);
+    
+
+
+   //---------- Buscar producto por id -----------//
+
+     /*
+     $producto = $stripe->products->retrieve(
+        $productoID,
+        []
+      );
+      return dd($producto);
+      */
+
+
+
+    //----- Actualizar producto------//
+
+    /*$stripe->products->update(
+        'prod_NOo8C7FqpPWkN2',
+        ['name' => 'Pecera Acuamax con 20 galones ref']
+      );*/
+
+     //Actualizar precio de producto
+
+     //----------- Actualizar precio por producto ---------------//
+   /*
+     $precio = $stripe->prices->search(['query' => 'product:\'prod_NOo8C7FqpPWkN2\'']);
+     
+     $precioID = $precio->data[0]->id;
+     $totalprecio = 3200 * 100;
+
+    $stripe->prices->update($precioID, ['active' => false]);
+
+     $price = $stripe->prices->create([
+        'unit_amount' => $totalprecio,
+        'currency' => 'mxn',
+        'product' => 'prod_NOo8C7FqpPWkN2',
+        'active' => true
+    ]);
+
+    
+    $stripe->products->update(
+        $productoID,
+        ['default_price' => $price->id ]
+      );
+      */
+
+      //Realizar pago de pedido//
+
+     /*
+      $response = $stripe->paymentLinks->create([
+        'line_items' => [
+          [
+            'price' => 'price_1LbKMDDZKIRPs7tlGl2vBc0O',
+            'quantity' => 2,
+          ],
+        ],
+      ]);
+
+
+      return dd($response);
+
+     
+     
+     
+
+});
+*/
 Route::middleware(['verificar.email'])->group(function () {
 
 Route::get("/",[TiendaController::class,"inicio"])->name("inicio");

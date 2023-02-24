@@ -39,7 +39,7 @@ export default {
 
 <template>
   <div >
-   <div class="overflow-y-auto pr-2 scroll scroll-track scroll-thumb max-h-80 ">
+   <div >
       <ul>
          <li>
             <button type="button" class="w-full flex items-center text-gray-500 hover:text-white hover:bg-sky-700  block px-3 py-2 rounded-md text-base font-bold" @click="showSubMenuMovil('acuarios_sumps_movil')">

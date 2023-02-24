@@ -17,9 +17,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        /*
             $this->app->bind('path.public',function(){
             return'/home/m3lj6s02c2ok/public_html';
             });
+
+            */
             Cashier::ignoreMigrations();
 
            

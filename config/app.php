@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'AQUATICA'),
+    'name' => env('APP_NAME', 'AquaticDepot'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

@@ -65,7 +65,7 @@ class ProductController extends Controller
             $productos = $productos->where('activo',  request('activo'));
         }
 
-        $productos = $productos->paginate(10)->appends(request()->query());
+        $productos = $productos->orderBy('id', 'desc')->paginate(10)->appends(request()->query());
         return Inertia::render('Dashboard/Productos/Index',
         compact("productos","marcas","categorias","filtroBuscador","filtroMarca","filtroCategoria","filtroActivo"));
 

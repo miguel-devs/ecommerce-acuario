@@ -56,11 +56,16 @@
          </div>
          <div v-else class="">
             <p class="text-center text-gray-700">No hay productos en el carrito</p>
+            <div class=" flex justify-center mt-5"> 
+            <Link :href="route('inicio')" class="bg-sky-400 pt-1 pb-1 pl-4 pr-4 text-white rounded-md ">
+                 Regresar  
+           </Link>
+          </div>      
           </div>
          </div>
 
 
-         <div class="h-[28rem] bg-white border border-slate-200 rounded-md shadow-md text-slate-700">
+         <div v-if="carrito.length > 0" class="h-[28rem] bg-white border border-slate-200 rounded-md shadow-md text-slate-700">
             <div class="flex ">
               <div class="w-full border-b border-slate-200 p-2">
                  <div class="flex w-full justify-center">
