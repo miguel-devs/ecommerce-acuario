@@ -7,7 +7,7 @@
     <NavBarTienda :totalCarritoProps="totalCarrito" />
     <NavLeft />
     <section class="w-full min-h-screen bg-sky-600 pt-20 pl-10 pr-10 pb-10">
-      <div class="bg-white bg-white rounded-md shadow-md pt-6 pb-6">
+      <div class="bg-white bg-white rounded-md shadow-md pt-6 ">
         <nav aria-label="Breadcrumb" class="mb-4">
           <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
             <li>
