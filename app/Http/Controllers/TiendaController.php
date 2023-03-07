@@ -22,12 +22,7 @@ class TiendaController extends Controller
         return Inertia::render('Tienda/Inicio');
     }
    
-    public function novedades(){
-        return Inertia::render('Tienda/Novedades');
-    }
-    public function marcas(){
-        return Inertia::render('Tienda/Marcas');
-    }
+  
     public function calculadora(){
         return Inertia::render('Tienda/Calculadora');
     }
@@ -57,13 +52,13 @@ class TiendaController extends Controller
         $productos = Product::
         select("products.id as id",
         "products.nombre","brands.nombre as nombre_marca",
-        "categories.nombre as nombre_categoria",
+        "categories.nombre as nombre_categoria","categories.url_clean as url_categoria",
         "precio","descripcion","imagen")
         ->where('activo','si') 
         ->leftJoin('brands', 'brands.id', '=', 'products.brand_id')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
         ->with("offer")
-        ->paginate(12);
+        ->paginate(20);
         return Inertia::render('Tienda/Tienda',compact("productos"));
     }
 

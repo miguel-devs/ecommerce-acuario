@@ -36,7 +36,7 @@ class ProductController extends Controller
 
         $productos = Product::
           select("products.id as id","products.nombre","brands.nombre as nombre_marca",
-          "categories.nombre as nombre_categoria","precio",
+          "categories.nombre as nombre_categoria","categories.url_clean as url_categoria","precio",
           "descripcion","imagen") 
         ->leftJoin('brands', 'brands.id', '=', 'products.brand_id')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
@@ -55,7 +55,7 @@ class ProductController extends Controller
 
         $productos = Product::
           select("products.id as id","products.nombre","brands.nombre as nombre_marca",
-          "categories.nombre as nombre_categoria","precio","descripcion",
+          "categories.nombre as nombre_categoria","categories.url_clean as url_categoria","precio","descripcion",
           "imagen") 
         ->leftJoin('brands', 'brands.id', '=', 'products.brand_id')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
@@ -72,7 +72,7 @@ class ProductController extends Controller
         $brand = Brand::select("nombre","url_clean")->where("brands.url_clean",$marca)->get();
         $productos = Product::
           select("products.id as id","products.nombre","brands.nombre as nombre_marca",
-          "categories.nombre as nombre_categoria","precio","descripcion",
+          "categories.nombre as nombre_categoria","precio","categories.url_clean as url_categoria","descripcion",
           "imagen") 
         ->leftJoin('brands', 'brands.id', '=', 'products.brand_id')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
@@ -88,7 +88,7 @@ class ProductController extends Controller
         $productos = Product::
         select("products.id as id",
         "products.nombre","brands.nombre as nombre_marca",
-        "categories.nombre as nombre_categoria",
+        "categories.nombre as nombre_categoria","categories.url_clean as url_categoria",
         "precio","descripcion","imagen","descuento")
         ->where('activo','si') 
         ->leftJoin('brands', 'brands.id', '=', 'products.brand_id')
@@ -96,7 +96,7 @@ class ProductController extends Controller
         ->Join('offers', 'offers.product_id', '=', 'products.id')
         ->whereDate('desde', '<=', date("Y-m-d"))
         ->whereDate('hasta', '>=', date("Y-m-d"))
-        ->paginate(12);
+        ->paginate(20);
  
 
         return Inertia::render('Tienda/Ofertas',compact("productos"));
@@ -107,14 +107,14 @@ class ProductController extends Controller
         $productos = Product::
         select("products.id as id",
         "products.nombre","brands.nombre as nombre_marca",
-        "categories.nombre as nombre_categoria",
+        "categories.nombre as nombre_categoria","categories.url_clean as url_categoria",
         "precio","descripcion","imagen")
         ->where("activo", "si") 
         ->leftJoin('brands', 'brands.id', '=', 'products.brand_id')
         ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
         ->with("offer")
         ->latest("products.created_at")
-        ->take(10)
+        ->take(20)
         ->get();
         return Inertia::render('Tienda/Novedades',compact("productos"));
     }

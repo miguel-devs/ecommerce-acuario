@@ -34,35 +34,41 @@
         </nav>
         <div v-if="productos.data.length >0 "> 
 
-        <div class="mt-6 pl-4 pr-4 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          <div v-for="(producto, index) in productos.data" :key="index" class="group relative">
-            <div class="absolute rounded-full bg-sky-700 text-white p-1 text-sm h-8 w-8 flex justify-center items-center">
+          <div
+          class="h-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4  content-center overflow-x">
+          <div v-for="(producto, index) in productos.data" :key="index"
+            class="bg-white border border-gray-100 p-2 rounded-md shadow-md relative">
+            <div v-if="producto.descuento"
+              class="absolute rounded-full bg-sky-700 text-white p-1 text-sm h-8 w-8 flex justify-center items-center">
               {{ producto.descuento }}%
             </div>
-            <div
-              class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-              <img :src="`/imagenes/productos/${producto.imagen}`" :alt="producto.nombre"
-                class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+            <div class="w-full flex justify-center">
+            <img :src="`/imagenes/productos/${producto.imagen}`" class="object-contain h-48 w-96" />
             </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-sm text-gray-700">
-                  <Link :href="route('ver-producto', { product: producto.id })">
-                  <span aria-hidden="true" class="absolute inset-0"></span>
-                  {{ producto.nombre }}
-                  </Link>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">{{ producto.nombre_marca }}</p>
-              </div>
-              <div>
-                <p class="text-sm font-medium text-gray-400 line-through">${{ producto.precio }}</p>
-                <p class="text-sm font-medium text-gray-900">
-                  ${{ descuento(producto.precio, producto.descuento) }}
-                </p>
-              </div>
+
+
+
+            <p class="text-sm text-center">{{ producto.nombre }}</p>
+            <div class="flex justify-center">
+              <Link :href="route('ver-productos-categoria', { categoria:producto.url_categoria})"
+                class="text-sm text-center text-gray-400">{{ producto.nombre_categoria}}</Link>
+            </div>
+            <div v-if="producto.offer">
+              <p class="text-xs text-center text-gray-400 line-through">${{ producto.precio }}</p>
+
+              <p class="text-xs text-center text-sky-600">
+                ${{ descuento(producto.precio, producto.offer.descuento) }}
+              </p>
+            </div>
+            <div v-else>
+              <p class="text-xs text-center text-sky-600">${{ producto.precio }}</p>
+            </diV>
+            <div class="w-full flex justify-center p-2">
+              <Link :href="route('ver-producto', { product: producto.id })"
+                class="bg-sky-400 pt-1 pb-1 pl-4 pr-4 text-white rounded-md ">Añadir al carrito</Link>
             </div>
           </div>
-          <!-- More products... -->
+
         </div>
         <div id="pagination">
               <Pagination :links="productos" />
@@ -126,6 +132,7 @@ export default {
     if (localStorage.getItem("carrito")) {
       this.totalCarrito = JSON.parse(localStorage.getItem("carrito")).length;
     }
+    console.log(this.productos);
   },
   methods: {
     descuento(precio, descuento) {

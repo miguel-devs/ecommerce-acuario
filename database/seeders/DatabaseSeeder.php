@@ -31,13 +31,12 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             OfferSeeder::class
         ]);
-        */
-
+        
 
         $this->call([
             CategorySeeder::class,
             BrandSeeder::class,
             RoleSeeder::class,
-        ]);
+        ]);*/
     }
 }

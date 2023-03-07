@@ -49,39 +49,8 @@
       </TitleSeparator>
 
       <div id="productos" class="pl-10 pr-10 pt-20 pb-20 ">
-        <div v-if="productosAleatorios.length > 0"
-          class="h-1/2 grid grid-cols-2 lg:grid-cols-5 gap-4  content-center overflow-x">
-          <div v-for="(productoAleatorio, index) in productosAleatorios" :key="index"
-            class="bg-white border border-gray-100 p-2 rounded-md shadow-md relative">
-            <div v-if="productoAleatorio.offer"
-              class="absolute rounded-full bg-sky-700 text-white p-1 text-sm h-8 w-8 flex justify-center items-center">
-              {{ productoAleatorio.offer.descuento }}%
-            </div>
-
-            <img :src="`/imagenes/productos/${productoAleatorio.imagen}`" class="w-full object-center" />
-
-
-            <p class="text-sm text-center">{{ productoAleatorio.nombre }}</p>
-            <div class="flex justify-center">
-              <Link :href="route('ver-productos-categoria', { categoria: productoAleatorio.url_categoria })"
-                class="text-sm text-center text-gray-400">{{ productoAleatorio.nombre_categoria }}</Link>
-            </div>
-            <div v-if="productoAleatorio.offer">
-              <p class="text-xs text-center text-gray-400 line-through">${{ productoAleatorio.precio }}</p>
-
-              <p class="text-xs text-center text-sky-600">
-                ${{ descuento(productoAleatorio.precio, productoAleatorio.offer.descuento) }}
-              </p>
-            </div>
-            <div v-else>
-              <p class="text-xs text-center text-sky-600">${{ productoAleatorio.precio }}</p>
-            </diV>
-            <div class="w-full flex justify-center p-2">
-              <Link :href="route('ver-producto', { product: productoAleatorio.id })"
-                class="bg-sky-400 pt-1 pb-1 pl-4 pr-4 text-white rounded-md ">Añadir al carrito</Link>
-            </div>
-          </div>
-
+        <div  v-if="productosAleatorios.length > 0">
+         <ListarProductos :productos=productosAleatorios> </ListarProductos>
         </div>
         <div v-else class="h-96 w-full flex justify-center items-center">
            <TheEmptyProducts></TheEmptyProducts>
@@ -137,6 +106,8 @@
 
     </section>
 
+    <TheSectionNosotros></TheSectionNosotros>
+
     <TheSectionCategorias></TheSectionCategorias>
 
     <section id="section-marcas" class="relative bg-white">
@@ -180,6 +151,8 @@ import TitleSeparator from "@/Layouts/TitleSeparator.vue";
 import Contacto from "@/Layouts/Contacto.vue";
 import TheSectionCategorias from "@/Components/TheSectionCategorias.vue";
 import TheEmptyProducts from "@/Layouts/TheEmptyProducts.vue";
+import TheSectionNosotros from "@/Components/TheSectionNosotros.vue";
+import ListarProductos from "@/Components/ListarProductos.vue";
 
 
 export default {
@@ -191,7 +164,9 @@ export default {
     TitleSeparator,
     TheEmptyProducts,
     Contacto,
-    TheSectionCategorias
+    TheSectionCategorias,
+    TheSectionNosotros,
+    ListarProductos
   },
   props: {
     productosCarrito: Object,

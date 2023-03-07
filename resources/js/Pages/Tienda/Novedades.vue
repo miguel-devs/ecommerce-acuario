@@ -34,43 +34,8 @@
           </ol>
         </nav>
         <div v-if="productos.length >0 "> 
-        <div class="mt-6 pl-4 pr-4 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <ListarProductos :productos = productos></ListarProductos>
 
-          <div v-for="(producto, index) in productos" :key="index" class="group relative">
-            <div v-if="producto.offer"
-              class="absolute rounded-full bg-sky-700 text-white p-1 text-sm h-8 w-8 flex justify-center items-center">
-              {{ producto.offer.descuento }}%
-            </div>
-            <div
-              class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-              <img :src="`/imagenes/productos/${producto.imagen}`" :alt="producto.nombre"
-                class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-sm text-gray-700">
-                  <Link :href="route('ver-producto', { product: producto.id })">
-                  <span aria-hidden="true" class="absolute inset-0"></span>
-                  {{ producto.nombre }}
-                  </Link>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">{{ producto.nombre_marca }}</p>
-              </div>
-              <div v-if="producto.offer">
-                <p class="text-sm font-medium text-gray-400 line-through">${{ producto.precio }}</p>
-                <p class="text-sm font-medium text-gray-900">
-                  ${{ descuento(producto.precio, producto.offer.descuento) }}
-                </p>
-              </div>
-              <div v-else>
-                <p class="text-sm font-medium text-gray-900">${{ producto.precio }}</p>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- More products... -->
-        </div>
         </div>
         <div v-else class="h-96 w-full flex justify-center items-center">
            <TheEmptyProducts></TheEmptyProducts>
@@ -92,6 +57,7 @@ import { Link } from '@inertiajs/inertia-vue3';
 import TitleSeparator from "@/Layouts/TitleSeparator.vue";
 import Contacto from "@/Layouts/Contacto.vue";
 import TheEmptyProducts from "@/Layouts/TheEmptyProducts.vue";
+import ListarProductos from "@/Components/ListarProductos.vue";
 
 export default {
   props: {
@@ -106,7 +72,8 @@ export default {
     NavLeft,
     TitleSeparator,
     Contacto,
-    TheEmptyProducts
+    TheEmptyProducts,
+    ListarProductos
 
   },
   data() {
