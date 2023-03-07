@@ -36,7 +36,7 @@
           <div class="h-full w-full flex justify-center items-center text-center">
             <div class="image-mantenimiento block">
 
-              <img class="rounded w-80" src="imagenes/web/mantenimiento.jpg" alt="mantenimiento" title="mantenimiento">
+              <img class="rounded w-80 block" src="imagenes/web/mantenimiento.jpg" alt="mantenimiento" title="mantenimiento">
               <div class="mt-5 p-4">
                 <p>Mantenimiento de acuarios 🐠🐡</p>
               </div>
